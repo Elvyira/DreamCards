@@ -6,9 +6,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Wizcorp.Utils.Logger;
+using UnityEngine.Video;
 
 public class SimpleDemo : MonoBehaviour {
 	public UnityEngine.UI.Image jauge;
+
+    public VideoPlayer videoPlayer;
+    public VideoClip videoReine;
 
 	private IScanner BarcodeScanner;
 	public Text TextHeader;
@@ -84,13 +88,17 @@ public class SimpleDemo : MonoBehaviour {
 		// Feedback
 		Audio.Play();
 
-		if(barCodeValue == "cauchemard0")
+		if(barCodeValue == "lareine")
 		{
-			// ON ACTIVE LA JAUGE
-			jauge.fillAmount = 0;
-			InvokeRepeating("IncreaseJauge", 0, 0.03f);
+            videoPlayer.clip = videoReine;
+            videoPlayer.Play();
+            Invoke("StartScan", (float)(videoPlayer.length + 3));
+            // ON ACTIVE LA JAUGE
+            //jauge.fillAmount = 0;
+            //InvokeRepeating("IncreaseJauge", 0, 0.03f);
 
-		}else if(barCodeValue == "cauchemard1")
+        }
+        else if(barCodeValue == "cauchemard1")
 		{
 			Debug.Log("texte");
 			// maVariableAnim.Play();
@@ -99,7 +107,7 @@ public class SimpleDemo : MonoBehaviour {
 
 		// On vient de scanner une carte
 		// on relance le scanner dans 1 seconde
-		Invoke("StartScan", 3);	
+		
 	}
 
 	void StartScan()
