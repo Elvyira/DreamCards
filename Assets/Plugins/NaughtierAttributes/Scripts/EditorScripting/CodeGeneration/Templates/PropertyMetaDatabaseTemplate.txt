@@ -1,0 +1,33 @@
+﻿#if UNITY_EDITOR
+// This class is auto generated
+
+using System;
+using System.Collections.Generic;
+
+namespace NaughtyAttributes.Editor
+{
+    public static class __classname__
+    {
+        private static Dictionary<Type, BasePropertyMeta> metasByAttributeType;
+
+        static __classname__()
+        {
+            metasByAttributeType = new Dictionary<Type, BasePropertyMeta>();
+            __entries__
+        }
+
+        public static BasePropertyMeta GetMetaForAttribute(Type attributeType)
+        {
+            BasePropertyMeta meta;
+            if (metasByAttributeType.TryGetValue(attributeType, out meta))
+            {
+                return meta;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+}
+#endif

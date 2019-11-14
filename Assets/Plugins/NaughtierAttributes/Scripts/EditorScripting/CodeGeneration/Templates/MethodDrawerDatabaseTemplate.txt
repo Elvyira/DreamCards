@@ -1,0 +1,33 @@
+﻿#if UNITY_EDITOR
+// This class is auto generated
+
+using System;
+using System.Collections.Generic;
+
+namespace NaughtyAttributes.Editor
+{
+    public static class __classname__
+    {
+        private static Dictionary<Type, BaseMethodDrawer> drawersByAttributeType;
+
+        static __classname__()
+        {
+            drawersByAttributeType = new Dictionary<Type, BaseMethodDrawer>();
+            __entries__
+        }
+
+        public static BaseMethodDrawer GetDrawerForAttribute(Type attributeType)
+        {
+            BaseMethodDrawer drawer;
+            if (drawersByAttributeType.TryGetValue(attributeType, out drawer))
+            {
+                return drawer;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+}
+#endif

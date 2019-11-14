@@ -1,29 +1,18 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 #if UNITY_EDITOR
-using UnityEditor;
+using System.Linq;
 #endif
+using NaughtierAttributes;
 using UnityEngine;
 
 public class EntitiesDatabase : MonoBehaviour
 {
-    [SerializeField] private SommeilModel[] _sommeilEntities;
-    [SerializeField] private ActionModel[] _actionEntities;
-    [SerializeField] private ResultatModel[] _resultatEntities;
+    [SerializeField, FindAssets] private SommeilModel[] _sommeilEntities;
+    [SerializeField, FindAssets] private ActionModel[] _actionEntities;
+    [SerializeField, FindAssets] private ResultatModel[] _resultatEntities;
+    [SerializeField, FindAssets] private NoteCarnetModel[] _notebookEntries;
 
     private static EntitiesDatabase m_instance;
-
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        _sommeilEntities = FindAssetsOfType<SommeilModel>();
-        _actionEntities = FindAssetsOfType<ActionModel>();
-        _resultatEntities = FindAssetsOfType<ResultatModel>();
-    }
-
-    private static T[] FindAssetsOfType<T>() =>
-        AssetDatabase.FindAssets($"t:{typeof(T)}".Replace("UnityEngine.", "")).Select(AssetDatabase.GUIDToAssetPath)
-            .Select((s, i) => AssetDatabase.LoadAssetAtPath(s, typeof(T))).Where(asset => asset != null).Cast<T>().ToArray();
-#endif
 
     private void Awake()
     {
@@ -43,6 +32,7 @@ public class EntitiesDatabase : MonoBehaviour
         {
             if (sommeil.QRID == qrid) return sommeil;
         }
+
         return null;
     }
 
@@ -52,6 +42,7 @@ public class EntitiesDatabase : MonoBehaviour
         {
             if (action.QRID == qrid) return action;
         }
+
         return null;
     }
 
@@ -62,6 +53,38 @@ public class EntitiesDatabase : MonoBehaviour
             if (resultat.CheckResultat(sommeil, action))
                 return resultat;
         }
+
         return null;
     }
+
+    public static NoteCarnetModel[] GetUnlockedNotebookEntries()
+    {
+        var entriesList = new List<NoteCarnetModel>();
+        foreach (var notebookEntry in m_instance._notebookEntries)
+        {
+            if (SavedDataServices.IsNoteDiscovered(notebookEntry.sommeil.index, notebookEntry.typeNote))
+                entriesList.Add(notebookEntry);
+        }
+
+        return entriesList.ToArray();
+    }
+
+    public static void UnlockNotebookEntry(NoteCarnetModel noteCarnet)
+    {
+        if (SavedDataServices.DiscoverNote(noteCarnet.sommeil.index, noteCarnet.typeNote))
+            SavedDataServices.SavePlayer();
+    }
+
+
+    #region Editor
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        _sommeilEntities = _sommeilEntities.OrderBy(x => x.index).ToArray();
+        _actionEntities = _actionEntities.OrderBy(x => x.index).ToArray();
+    }
+#endif
+
+    #endregion /Editor
 }

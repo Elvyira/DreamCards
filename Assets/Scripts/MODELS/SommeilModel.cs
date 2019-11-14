@@ -11,45 +11,9 @@ public enum TypeSommeil : byte
 [CreateAssetMenu(menuName = "Entity/Sommeil", fileName = "Sommeil")]
 public class SommeilModel : CardModel
 {
+    [Header("Données sommeil")]
     public TypeSommeil typeSommeil;
-    public VideoClip startVideoClip, idleVideoClip;
 
-    public ActionModel[] actionReussiteCritique, actionReussite, actionEchecCritique;
-
-    public TypeResultat TryAction(ActionModel action)
-    {
-        if (CheckActionID(action.QRID, actionReussiteCritique))
-        {
-            // do reussite critique stuff
-
-            return TypeResultat.ReussiteCritique;
-        }
-
-        if (CheckActionID(action.QRID, actionReussite))
-        {
-            // do reussite stuff
-
-            return TypeResultat.Reussite;
-        }
-
-        if (CheckActionID(action.QRID, actionEchecCritique))
-        {
-            // do echec critique stuff
-
-            return TypeResultat.EchecCritique;
-        }
-
-        return TypeResultat.Echec;
-    }
-
-    private bool CheckActionID(string qrid, ActionModel[] actionList)
-    {
-        foreach (var action in actionList)
-        {
-            if (action.QRID == qrid)
-                return true;
-        }
-
-        return false;
-    }
+    [Header("Données graphiques")] public VideoClip startVideoClip;
+    public VideoClip idleVideoClip;
 }

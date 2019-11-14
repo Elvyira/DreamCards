@@ -5,11 +5,283 @@
     <e p="C:\Users\Namae\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_DreamCards.2009119880.00" t="ExcludeRecursive" />
     <e p="E:\Library\Documents\Unity\Games\DreamCards" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">
           <e p="ParserTest.cs" t="Include" />
           <e p="ScannerTest.cs" t="Include" />
+        </e>
+        <e p="JsonDotNet" t="Include">
+          <e p="link.xml" t="Include" />
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="NaughtierAttributes" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Core" t="Include">
+                <e p="ArrayAttributes" t="Include">
+                  <e p="BaseArrayAttribute.cs" t="Include" />
+                  <e p="ReorderableListAttribute.cs" t="Include" />
+                </e>
+                <e p="AutoValueAttributes" t="Include">
+                  <e p="AnimatorParameterAttribute.cs" t="Include" />
+                  <e p="Asset" t="Include">
+                    <e p="FindAssetAttribute.cs" t="Include" />
+                    <e p="FindAssetInFoldersAttribute.cs" t="Include" />
+                    <e p="FindAssetsAttribute.cs" t="Include" />
+                    <e p="FindAssetsInFoldersAttribute.cs" t="Include" />
+                  </e>
+                  <e p="Base" t="Include">
+                    <e p="BaseAutoValueAttribute.cs" t="Include" />
+                    <e p="BaseSearchAssetAttribute.cs" t="Include" />
+                    <e p="BaseSearchObjectAttribute.cs" t="Include" />
+                  </e>
+                  <e p="GetComponentAttribute.cs" t="Include" />
+                  <e p="GetComponentsAttribute.cs" t="Include" />
+                  <e p="Layer" t="Include">
+                    <e p="FindObjectsWithLayerAttribute.cs" t="Include" />
+                    <e p="FindObjectWithLayerAttribute.cs" t="Include" />
+                    <e p="GetComponentInChildrenWithLayerAttribute.cs" t="Include" />
+                    <e p="GetComponentsInChildrenWithLayerAttribute.cs" t="Include" />
+                    <e p="LayerObjectAttribute.cs" t="Include" />
+                  </e>
+                  <e p="LayerNameAttribute.cs" t="Include" />
+                  <e p="Name" t="Include">
+                    <e p="FindObjectAttribute.cs" t="Include" />
+                    <e p="FindObjectsAttribute.cs" t="Include" />
+                    <e p="GetComponentInChildrenAttribute.cs" t="Include" />
+                    <e p="GetComponentsInChildrenAttribute.cs" t="Include" />
+                    <e p="NameObjectAttribute.cs" t="Include" />
+                  </e>
+                  <e p="Tag" t="Include">
+                    <e p="FindObjectsWithTagAttribute.cs" t="Include" />
+                    <e p="FindObjectWithTagAttribute.cs" t="Include" />
+                    <e p="GetComponentInChildrenWithTagAttribute.cs" t="Include" />
+                    <e p="GetComponentsInChildrenWithTagAttribute.cs" t="Include" />
+                    <e p="TagObjectAttribute.cs" t="Include" />
+                  </e>
+                  <e p="ValueFromAttribute.cs" t="Include" />
+                </e>
+                <e p="BaseNaughtierAttribute.cs" t="Include" />
+                <e p="ClassAttribute" t="Include">
+                  <e p="BaseClassAttribute.cs" t="Include" />
+                </e>
+                <e p="DecoratorAttributes" t="Include">
+                  <e p="AlignAttribute.cs" t="Include" />
+                  <e p="BaseDecoratorAttribute.cs" t="Include" />
+                  <e p="BaseElementDecoratorAttribute.cs" t="Include" />
+                  <e p="ColorAttribute.cs" t="Include" />
+                  <e p="DisableIfAttribute.cs" t="Include" />
+                  <e p="EnableIfAttribute.cs" t="Include" />
+                  <e p="ReadOnlyAttribute.cs" t="Include" />
+                  <e p="ShowAssetPreviewAttribute.cs" t="Include" />
+                </e>
+                <e p="DrawConditionAttributes" t="Include">
+                  <e p="BaseDrawConditionAttribute.cs" t="Include" />
+                  <e p="HideIfAttribute.cs" t="Include" />
+                  <e p="ShowIfAttribute.cs" t="Include" />
+                </e>
+                <e p="DrawerAttributes" t="Include">
+                  <e p="BaseDrawerAttribute.cs" t="Include" />
+                  <e p="ButtonAttribute.cs" t="Include" />
+                  <e p="DropdownAttribute.cs" t="Include" />
+                  <e p="EnumFlagsAttribute.cs" t="Include" />
+                  <e p="HideAttribute.cs" t="Include" />
+                  <e p="LayerFieldAttribute.cs" t="Include" />
+                  <e p="MinMaxSliderAttribute.cs" t="Include" />
+                  <e p="ProgressBarAttribute.cs" t="Include" />
+                  <e p="ResizableTextAreaAttribute.cs" t="Include" />
+                  <e p="ShowNativePropertyAttribute.cs" t="Include" />
+                  <e p="ShowNonSerializedFieldAttribute.cs" t="Include" />
+                  <e p="SliderAttribute.cs" t="Include" />
+                </e>
+                <e p="GroupAttributes" t="Include">
+                  <e p="BaseGroupAttribute.cs" t="Include" />
+                  <e p="BoxGroupAttribute.cs" t="Include" />
+                  <e p="ConditionnalGroupAttribute.cs" t="Include" />
+                  <e p="FoldGroupAttribute.cs" t="Include" />
+                </e>
+                <e p="MetaAttributes" t="Include">
+                  <e p="BaseMetaAttribute.cs" t="Include" />
+                  <e p="InfoBoxAttribute.cs" t="Include" />
+                  <e p="OnValueChangedAttribute.cs" t="Include" />
+                </e>
+                <e p="ValidatorAttributes" t="Include">
+                  <e p="BaseValidatorAttribute.cs" t="Include" />
+                  <e p="MaxValueAttribute.cs" t="Include" />
+                  <e p="MinValueAttribute.cs" t="Include" />
+                  <e p="RequiredAttribute.cs" t="Include" />
+                  <e p="ValidateInputAttribute.cs" t="Include" />
+                </e>
+              </e>
+              <e p="EditorScripting" t="Include">
+                <e p="Attributes" t="Include">
+                  <e p="ArrayDrawerAttribute.cs" t="Include" />
+                  <e p="AutoValueDrawerAttribute.cs" t="Include" />
+                  <e p="BaseAttribute.cs" t="Include" />
+                  <e p="ClassDrawerAttribute.cs" t="Include" />
+                  <e p="ConditionalGrouperAttribute.cs" t="Include" />
+                  <e p="DecoratorDrawerAttribute.cs" t="Include" />
+                  <e p="ElementDecoratorDrawerAttribute.cs" t="Include" />
+                  <e p="FieldDrawerAttribute.cs" t="Include" />
+                  <e p="IAttribute.cs" t="Include" />
+                  <e p="MethodDrawerAttribute.cs" t="Include" />
+                  <e p="NativePropertyDrawerAttribute.cs" t="Include" />
+                  <e p="PropertyDrawConditionAttribute.cs" t="Include" />
+                  <e p="PropertyDrawerAttribute.cs" t="Include" />
+                  <e p="PropertyGrouperAttribute.cs" t="Include" />
+                  <e p="PropertyMetaAttribute.cs" t="Include" />
+                  <e p="PropertyValidatorAttribute.cs" t="Include" />
+                </e>
+                <e p="CodeGeneration" t="Include">
+                  <e p="ArrayDrawerDatabase.cs" t="Include" />
+                  <e p="AutoValueDrawerDatabase.cs" t="Include" />
+                  <e p="ClassDrawerDatabase.cs" t="Include" />
+                  <e p="CodeGenerator.cs" t="Include" />
+                  <e p="ConditionalGrouperDatabase.cs" t="Include" />
+                  <e p="DecoratorDrawerDatabase.cs" t="Include" />
+                  <e p="ElementDecoratorDrawerDatabase.cs" t="Include" />
+                  <e p="FieldDrawerDatabase.cs" t="Include" />
+                  <e p="MethodDrawerDatabase.cs" t="Include" />
+                  <e p="NativePropertyDrawerDatabase.cs" t="Include" />
+                  <e p="PropertyDrawConditionDatabase.cs" t="Include" />
+                  <e p="PropertyDrawerDatabase.cs" t="Include" />
+                  <e p="PropertyGrouperDatabase.cs" t="Include" />
+                  <e p="PropertyMetaDatabase.cs" t="Include" />
+                  <e p="PropertyValidatorDatabase.cs" t="Include" />
+                  <e p="Templates" t="Include">
+                    <e p="ArrayDrawerDatabaseTemplate.txt" t="Include" />
+                    <e p="AutoValueDrawerDatabaseTemplate.txt" t="Include" />
+                    <e p="ClassDrawerDatabaseTemplate.txt" t="Include" />
+                    <e p="ConditionalGrouperDatabaseTemplate.txt" t="Include" />
+                    <e p="DecoratorDrawerDatabaseTemplate.txt" t="Include" />
+                    <e p="ElementDecoratorDrawerDatabaseTemplate.txt" t="Include" />
+                    <e p="FieldDrawerDatabaseTemplate.txt" t="Include" />
+                    <e p="MethodDrawerDatabaseTemplate.txt" t="Include" />
+                    <e p="NativePropertyDrawerDbTemplate.txt" t="Include" />
+                    <e p="PropertyDrawConditionDatabaseTemplate.txt" t="Include" />
+                    <e p="PropertyDrawerDatabaseTemplate.txt" t="Include" />
+                    <e p="PropertyGrouperDatabaseTemplate.txt" t="Include" />
+                    <e p="PropertyMetaDatabaseTemplate.txt" t="Include" />
+                    <e p="PropertyValidatorDatabaseTemplate.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="Drawers" t="Include">
+                  <e p="ArrayDrawers" t="Include">
+                    <e p="BaseArrayDrawer.cs" t="Include" />
+                    <e p="ReorderableListArrayDrawer.cs" t="Include" />
+                  </e>
+                  <e p="AutoValueDrawers" t="Include">
+                    <e p="AnimatorParameterDrawer.cs" t="Include" />
+                    <e p="Asset" t="Include">
+                      <e p="FindAssetDrawer.cs" t="Include" />
+                      <e p="FindAssetInFoldersDrawer.cs" t="Include" />
+                      <e p="FindAssetsDrawer.cs" t="Include" />
+                      <e p="FindAssetsInFoldersDrawer.cs" t="Include" />
+                    </e>
+                    <e p="Base" t="Include">
+                      <e p="BaseAutoValueArrayDrawer.cs" t="Include" />
+                      <e p="BaseAutoValueDrawer.cs" t="Include" />
+                      <e p="BaseSearchDrawer.cs" t="Include" />
+                    </e>
+                    <e p="GetComponentDrawer.cs" t="Include" />
+                    <e p="GetComponentsDrawer.cs" t="Include" />
+                    <e p="Layer" t="Include">
+                      <e p="FindObjectsWithLayerDrawer.cs" t="Include" />
+                      <e p="FindObjectWithLayerDrawer.cs" t="Include" />
+                      <e p="GetComponentInChildrenWithLayerDrawer.cs" t="Include" />
+                      <e p="GetComponentsInChildrenWithLayerDrawer.cs" t="Include" />
+                    </e>
+                    <e p="LayerNameDrawer.cs" t="Include" />
+                    <e p="Name" t="Include">
+                      <e p="FindObjectDrawer.cs" t="Include" />
+                      <e p="FindObjectsDrawer.cs" t="Include" />
+                      <e p="GetComponentInChildrenDrawer.cs" t="Include" />
+                      <e p="GetComponentsInChildrenDrawer.cs" t="Include" />
+                    </e>
+                    <e p="Tag" t="Include">
+                      <e p="FindObjectsWithTagDrawer.cs" t="Include" />
+                      <e p="FindObjectWithTagDrawer.cs" t="Include" />
+                      <e p="GetComponentInChildrenWithTagDrawer.cs" t="Include" />
+                      <e p="GetComponentsInChildrenWithTagDrawer.cs" t="Include" />
+                    </e>
+                    <e p="ValueFromDrawer.cs" t="Include" />
+                  </e>
+                  <e p="ClassDrawers" t="Include">
+                    <e p="BaseClassDrawer.cs" t="Include" />
+                  </e>
+                  <e p="DecoratorDrawers" t="Include">
+                    <e p="AlignDecoratorDrawer.cs" t="Include" />
+                    <e p="BaseDecoratorDrawer.cs" t="Include" />
+                    <e p="BaseElementDecoratorDrawer.cs" t="Include" />
+                    <e p="ColorDecoratorDrawer.cs" t="Include" />
+                    <e p="DisableIfDecoratorDrawer.cs" t="Include" />
+                    <e p="EnableIfDecoratorDrawer.cs" t="Include" />
+                    <e p="ReadOnlyDecoratorDrawer.cs" t="Include" />
+                    <e p="ShowAssetPreviewElementDecoratorDrawer.cs" t="Include" />
+                  </e>
+                  <e p="FieldDrawers" t="Include">
+                    <e p="BaseFieldDrawer.cs" t="Include" />
+                    <e p="ShowNonSerializedFieldFieldDrawer.cs" t="Include" />
+                  </e>
+                  <e p="MethodDrawers" t="Include">
+                    <e p="BaseMethodDrawer.cs" t="Include" />
+                    <e p="ButtonMethodDrawer.cs" t="Include" />
+                  </e>
+                  <e p="NativePropertyDrawers" t="Include">
+                    <e p="BaseNativePropertyDrawer.cs" t="Include" />
+                    <e p="ShowNativePropertyNativePropertyDrawer.cs" t="Include" />
+                  </e>
+                  <e p="PropertyDrawConditions" t="Include">
+                    <e p="BasePropertyDrawCondition.cs" t="Include" />
+                    <e p="HideIfPropertyDrawCondition.cs" t="Include" />
+                    <e p="ShowIfPropertyDrawCondition.cs" t="Include" />
+                  </e>
+                  <e p="PropertyDrawers" t="Include">
+                    <e p="BasePropertyDrawer.cs" t="Include" />
+                    <e p="DropdownPropertyDrawer.cs" t="Include" />
+                    <e p="EnumFlagsPropertyDrawer.cs" t="Include" />
+                    <e p="HidePropertyDrawer.cs" t="Include" />
+                    <e p="IArrayElementDrawer.cs" t="Include" />
+                    <e p="LayerFieldPropertyDrawer.cs" t="Include" />
+                    <e p="MinMaxSliderPropertyDrawer.cs" t="Include" />
+                    <e p="ProgressBarPropertyDrawer.cs" t="Include" />
+                    <e p="ResizableTextAreaPropertyDrawer.cs" t="Include" />
+                    <e p="SliderPropertyDrawer.cs" t="Include" />
+                  </e>
+                  <e p="PropertyGroupers" t="Include">
+                    <e p="BasePropertyGrouper.cs" t="Include" />
+                    <e p="BoxGroupPropertyGrouper.cs" t="Include" />
+                    <e p="ConditionnalGrouper.cs" t="Include" />
+                    <e p="FoldGroupConditionalGrouper.cs" t="Include" />
+                  </e>
+                  <e p="PropertyMetas" t="Include">
+                    <e p="BasePropertyMeta.cs" t="Include" />
+                    <e p="InfoBoxPropertyMeta.cs" t="Include" />
+                    <e p="OnValueChangedPropertyMeta.cs" t="Include" />
+                  </e>
+                  <e p="PropertyValidators" t="Include">
+                    <e p="BasePropertyValidator.cs" t="Include" />
+                    <e p="MaxValuePropertyValidator.cs" t="Include" />
+                    <e p="MinValuePropertyValidator.cs" t="Include" />
+                    <e p="RequiredPropertyValidator.cs" t="Include" />
+                    <e p="ValidateInputPropertyValidator.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Editors" t="Include">
+                  <e p="NaughtierEditor.cs" t="Include" />
+                </e>
+                <e p="Utility" t="Include">
+                  <e p="EditorDrawUtility.cs" t="Include" />
+                  <e p="IOUtility.cs" t="Include" />
+                  <e p="PropertyUtility.cs" t="Include" />
+                  <e p="ReflectionUtility.cs" t="Include" />
+                  <e p="SerializedPropertyUtility.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Enums.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="Samples" t="Include">
           <e p="Boot.cs" t="Include" />
@@ -25,6 +297,7 @@
           <e p="MODELS" t="Include">
             <e p="ActionModel.cs" t="Include" />
             <e p="CardModel.cs" t="Include" />
+            <e p="NoteCarnetModel.cs" t="Include" />
             <e p="ResultatModel.cs" t="Include" />
             <e p="SommeilModel.cs" t="Include" />
           </e>
@@ -63,7 +336,14 @@
             </e>
           </e>
           <e p="ScannerManager.cs" t="Include" />
+          <e p="Statics" t="Include">
+            <e p="DrawUtility.cs" t="Include" />
+            <e p="EditModeUtility.cs" t="Include" />
+            <e p="SavedDataServices.cs" t="Include" />
+            <e p="SerializeUtility.cs" t="Include" />
+          </e>
           <e p="TurnManager.cs" t="Include" />
+          <e p="VideoManager.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

@@ -1,27 +1,61 @@
 ﻿using UnityEngine;
-using UnityEngine.Video;
 
-public enum TurnState
+public enum TurnState : byte
 {
+    NotStarted,
     Sommeil,
-    Action
+    Action,
+    Resultat
 }
 
 public class TurnManager : MonoBehaviour
 {
     [SerializeField] private ScannerManager _scannerManager;
-    [SerializeField] private VideoPlayer _videoPlayer;
+    [SerializeField] private VideoManager _videoManager;
 
     private TurnState m_turnState;
     private SommeilModel m_currentSommeil;
     private ActionModel m_currentAction;
-
-    private TypeResultat m_currentTypeResultat;
+    private ResultatModel m_currentResultat;
 
     public void StartTurn()
     {
-        _scannerManager.Scan();
-        m_turnState = TurnState.Sommeil;
+        SelectState(TurnState.Sommeil);
+    }
+
+    public void StopTurn()
+    {
+        SelectState(TurnState.NotStarted);
+    }
+
+    public void GoToNextState()
+    {
+        var newState = m_turnState + 1;
+
+        if (newState <= TurnState.Resultat)
+            SelectState(newState);
+        else
+            StopTurn();
+    }
+
+    public void SelectState(TurnState state)
+    {
+        m_turnState = state;
+        switch (state)
+        {
+            case TurnState.NotStarted:
+                _scannerManager.Stop();
+                break;
+            case TurnState.Sommeil:
+                _scannerManager.Scan();
+                break;
+            case TurnState.Action:
+                _scannerManager.Scan();
+                break;
+            case TurnState.Resultat:
+                SelectResultat(EntitiesDatabase.GetResultat(m_currentSommeil, m_currentAction));
+                break;
+        }
     }
 
     public void SelectCard(CardModel card)
@@ -58,9 +92,7 @@ public class TurnManager : MonoBehaviour
     private void SelectSommeil(SommeilModel sommeil)
     {
         m_currentSommeil = sommeil;
-        _videoPlayer.clip = sommeil.startVideoClip;
-        _videoPlayer.Play();
-        m_turnState = TurnState.Action;
+        _videoManager.Play(sommeil.startVideoClip, sommeil.idleVideoClip);
     }
 
     private void SelectAction(ActionModel action)
@@ -69,10 +101,13 @@ public class TurnManager : MonoBehaviour
         // PLAY ACTION ANIMATION
     }
 
-    public void TryAction()
+    private void SelectResultat(ResultatModel resultat)
     {
-        if (m_currentSommeil == null || m_currentAction == null) return;
-
-        m_currentTypeResultat = m_currentSommeil.TryAction(m_currentAction);
+        m_currentResultat = resultat;
+        _videoManager.Play(resultat.videoClip);
+       // PLAY RESULTAT ANIMATION
+       
+       if (resultat.typeResultat != TypeResultat.Echec && resultat.noteCarnet != null) 
+           EntitiesDatabase.UnlockNotebookEntry(resultat.noteCarnet);
     }
 }
