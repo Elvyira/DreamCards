@@ -108,6 +108,6 @@ public class TurnManager : MonoBehaviour
        // PLAY RESULTAT ANIMATION
        
        if (resultat.typeResultat != TypeResultat.Echec && resultat.noteCarnet != null) 
-           EntitiesDatabase.UnlockNotebookEntry(resultat.noteCarnet);
+           EntitiesDatabase.UnlockNoteCarnet(resultat.noteCarnet);
     }
 }

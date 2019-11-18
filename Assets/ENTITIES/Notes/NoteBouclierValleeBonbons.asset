@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abae11fb9320344587fa59339830b3e, type: 3}
   m_Name: NoteBouclierValleeBonbons
   m_EditorClassIdentifier: 
+  nom: Bouclier
   note: "Bouclier : \u201CQuand on parle de monde de bisounours... Il n\u2019est pas
     si pacifique que \xE7a !\nJ\u2019ai d\xE9barqu\xE9 en pleine guerre, si je n\u2019avais
     pas trouv\xE9 ce bouclier pour me prot\xE9ger des projectiles..."

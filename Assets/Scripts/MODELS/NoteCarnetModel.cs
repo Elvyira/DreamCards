@@ -2,6 +2,8 @@
 using System.Linq;
 #endif
 using NaughtierAttributes;
+using NaughtierAttributes.Editor;
+using UnityEditor;
 using UnityEngine;
 
 public enum TypeNote : byte
@@ -16,6 +18,8 @@ public enum TypeNote : byte
 [CreateAssetMenu(menuName = "Entity/Note Carnet", fileName = "Note Carnet")]
 public class NoteCarnetModel : ScriptableObject
 {
+    public string nom;
+    
     [ResizableTextArea] public string note;
     [FoldGroup("Debug"), ReadOnly] public TypeNote typeNote;
     [FoldGroup("Debug"), ReadOnly] public SommeilModel sommeil;
@@ -44,6 +48,18 @@ public class NoteCarnetModel : ScriptableObject
         sommeil != null && EditModeUtility.FindAssetsOfType<NoteCarnetModel>()
             .Where(x => x.sommeil == sommeil && x.GetInstanceID() != GetInstanceID())
             .Any(x => x.typeNote == typeNote);
+
+    [CustomEditor(typeof(NoteCarnetModel))]
+    private class NoteCarnetModelDrawer : NaughtierEditor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+            var noteCarnet = (NoteCarnetModel) target;
+            noteCarnet.OnValidate();
+        }
+    }
+
 #endif
 
     #endregion /Editor

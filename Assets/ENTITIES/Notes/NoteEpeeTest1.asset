@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9abae11fb9320344587fa59339830b3e, type: 3}
-  m_Name: NoteEpeeValleeBonbons
+  m_Name: NoteEpeeTest1
   m_EditorClassIdentifier: 
-  nom: Epee
+  nom: Epee Test 1
   note: "\xC9p\xE9e : \u201CIl aurait fallu \xEAtre une \xE9p\xE9iste experte pour
     parvenir \xE0 trancher cette guimauve en plein vol...\nA\xEFe a\xEFe !\u201D"
   typeNote: 3

@@ -63,33 +63,33 @@ public static class SavedDataServices
     #region Static Access
 
     #region PlayerData
-
+    
     public static bool IsNoteDiscovered(byte sommeilIndex, TypeNote typeNote)
     {
-        var index = GetNotebookEntryIndex(sommeilIndex);
-        return index != -1 && CheckTypeNote(NotebookEntries[index], typeNote);
+        var index = NotebookEntries.GetNotebookEntryIndex(sommeilIndex);
+        return index != -1 && CheckTypeNote(NotebookEntries[index], typeNote.ToNoteMask());
     }
 
     public static bool DiscoverNote(byte sommeilIndex, TypeNote typeNote)
     {
+        var noteMask = typeNote.ToNoteMask();
         if (NotebookEntries.Count == 0)
         {
-            NotebookEntries.Add(ToNotebookEntry(sommeilIndex, typeNote));
+            NotebookEntries.Add(ToNotebookEntry(sommeilIndex, noteMask));
             return true;
         }
 
-        var index = GetNotebookEntryIndex(sommeilIndex);
+        var index = NotebookEntries.GetNotebookEntryIndex(sommeilIndex);
         if (index == -1)
         {
-            NotebookEntries.Add(ToNotebookEntry(sommeilIndex, typeNote));
+            NotebookEntries.Add(ToNotebookEntry(sommeilIndex, noteMask));
             return true;
         }
 
-        if (CheckTypeNote(NotebookEntries[index], typeNote)) return false;
-        
-        NotebookEntries[index] |= (byte) typeNote;
-        return true;
+        if (CheckTypeNote(NotebookEntries[index], noteMask)) return false;
 
+        NotebookEntries[index] |= noteMask;
+        return true;
     }
 
     private static List<ushort> NotebookEntries
@@ -130,20 +130,34 @@ public static class SavedDataServices
 
     #region Utility
 
-    private static short GetNotebookEntryIndex(byte sommeilIndex)
+    private const byte INDEX_SHIFT = 8;
+    private const ushort NOTES_MASK = 0b0000000000011111;
+
+    public static byte ToNoteMask(this TypeNote typeNote) => ((byte) typeNote).ToByteMask();
+    
+    public static byte ToByteMask(this byte value) => (byte) Mathf.Pow(2, value);
+
+    public static short GetNotebookEntryIndex(this List<ushort> notebookEntries, byte sommeilIndex)
     {
-        for (short index = 0; index < NotebookEntries.Count; index++)
-            if (CheckSommeilIndex(NotebookEntries[index], sommeilIndex))
+        for (short index = 0; index < notebookEntries.Count; index++)
+            if (CheckSommeilIndex(notebookEntries[index], sommeilIndex))
                 return index;
 
         return -1;
     }
 
-    private static ushort ToNotebookEntry(byte sommeilIndex, TypeNote typeNote) => (ushort) ((sommeilIndex << 8) + (byte) typeNote);
+    public static byte GetSommeilIndex(ushort notebookEntry) => (byte) (notebookEntry >> INDEX_SHIFT);
+    
+    public static ushort ToNotebookEntry(byte sommeilIndex, byte typeNote) =>
+        (ushort) ((sommeilIndex << INDEX_SHIFT) + (typeNote & NOTES_MASK));
+    
+    public static (byte sommeilIndex, byte typeNote) GetNotebookEntryValues(ushort notebookEntry) =>
+        (GetSommeilIndex(notebookEntry), (byte) (notebookEntry & NOTES_MASK));
 
-    private static bool CheckSommeilIndex(ushort notebookEntry, byte sommeilIndex) => (byte) (notebookEntry >> 8) == sommeilIndex;
+    private static bool CheckSommeilIndex(ushort notebookEntry, byte sommeilIndex) => (byte) (notebookEntry >> INDEX_SHIFT) == sommeilIndex;
 
-    private static bool CheckTypeNote(ushort notebookEntry, TypeNote typeNote) => ((byte) notebookEntry & (byte) typeNote) != 0;
+    private static bool CheckTypeNote(ushort notebookEntry, byte typeNote) => (notebookEntry & NOTES_MASK & typeNote) != 0;
+    
 
     private static string GetPath(DataType dataType)
     {

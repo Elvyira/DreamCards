@@ -1,6 +1,8 @@
 ﻿using NaughtierAttributes;
+using UnityEditor;
 #if UNITY_EDITOR
 using System.Linq;
+using NaughtierAttributes.Editor;
 #endif
 using UnityEngine;
 using UnityEngine.Video;
@@ -13,7 +15,9 @@ public enum TypeResultat : byte
     EchecCritique,
 }
 
+#if UNITY_EDITOR
 [CreateAssetMenu(menuName = "Entity/Resultat", fileName = "Resultat")]
+#endif
 public class ResultatModel : ScriptableObject
 {
     [Header("Données résultat")] public TypeResultat typeResultat;
@@ -27,7 +31,7 @@ public class ResultatModel : ScriptableObject
 
     public bool CheckResultat(SommeilModel sommeil, ActionModel action)
     {
-        return (sommeil.QRID == this.sommeil.QRID && action.QRID == this.action.QRID);
+        return (sommeil.index == this.sommeil.index && action.index == this.action.index);
     }
 
     #region Editor
@@ -58,6 +62,18 @@ public class ResultatModel : ScriptableObject
         sommeil != null && EditModeUtility.FindAssetsOfType<NoteCarnetModel>()
             .Where(x => x.sommeil == sommeil && x.GetInstanceID() != noteCarnet.GetInstanceID())
             .Any(x => x.typeNote == typeNote);
+
+    [CustomEditor(typeof(ResultatModel))]
+    private class ResultatModelDrawer : NaughtierEditor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+            var resultat = (ResultatModel) target;
+            resultat.OnValidate();
+        }
+    }
+    
 #endif
 
     #endregion /Editor

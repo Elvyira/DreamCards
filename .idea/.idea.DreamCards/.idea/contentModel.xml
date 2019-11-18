@@ -293,6 +293,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="EditorWindows" t="Include">
+            <e p="BaseEditorWindow.cs" t="Include" />
+            <e p="BaseSavedDataEditorWindows.cs" t="Include" />
+            <e p="EditSavedDataEditor.cs" t="Include" />
+          </e>
           <e p="EntitiesDatabase.cs" t="Include" />
           <e p="MODELS" t="Include">
             <e p="ActionModel.cs" t="Include" />
