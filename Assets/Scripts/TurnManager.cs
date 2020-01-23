@@ -4,7 +4,7 @@ public enum TurnState : byte
 {
     NotStarted,
     Sommeil,
-    Action,
+    Objet,
     Resultat
 }
 
@@ -14,8 +14,8 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private VideoManager _videoManager;
 
     private TurnState m_turnState;
-    private SommeilModel m_currentSommeil;
-    private ActionModel m_currentAction;
+    private NuitModel m_currentNuit;
+    private ObjetModel m_currentObjet;
     private ResultatModel m_currentResultat;
 
     public void StartTurn()
@@ -49,11 +49,11 @@ public class TurnManager : MonoBehaviour
             case TurnState.Sommeil:
                 _scannerManager.Scan();
                 break;
-            case TurnState.Action:
+            case TurnState.Objet:
                 _scannerManager.Scan();
                 break;
             case TurnState.Resultat:
-                SelectResultat(EntitiesDatabase.GetResultat(m_currentSommeil, m_currentAction));
+                SelectResultat(EntitiesDatabase.GetResultat(m_currentNuit, m_currentObjet));
                 break;
         }
     }
@@ -63,9 +63,9 @@ public class TurnManager : MonoBehaviour
         switch (m_turnState)
         {
             case TurnState.Sommeil:
-                if (card is SommeilModel sommeil)
+                if (card is NuitModel nuit)
                 {
-                    SelectSommeil(sommeil);
+                    SelectSommeil(nuit);
                 }
                 else
                 {
@@ -74,10 +74,10 @@ public class TurnManager : MonoBehaviour
                 }
 
                 break;
-            case TurnState.Action:
-                if (card is ActionModel action)
+            case TurnState.Objet:
+                if (card is ObjetModel objet)
                 {
-                    SelectAction(action);
+                    SelectObjet(objet);
                 }
                 else
                 {
@@ -89,25 +89,30 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    private void SelectSommeil(SommeilModel sommeil)
+    private void SelectSommeil(NuitModel nuit)
     {
-        m_currentSommeil = sommeil;
-        _videoManager.Play(sommeil.startVideoClip, sommeil.idleVideoClip);
+        m_currentNuit = nuit;
+        _videoManager.Play(nuit.startVideoClip, nuit.idleVideoClip);
     }
 
-    private void SelectAction(ActionModel action)
+    private void SelectObjet(ObjetModel objet)
     {
-        m_currentAction = action;
+        m_currentObjet = objet;
         // PLAY ACTION ANIMATION
     }
 
     private void SelectResultat(ResultatModel resultat)
     {
+        if (resultat == null)
+        {
+            // DEAL WITH ECHEC
+            return;
+        }
+        
         m_currentResultat = resultat;
         _videoManager.Play(resultat.videoClip);
        // PLAY RESULTAT ANIMATION
        
-       if (resultat.typeResultat != TypeResultat.Echec && resultat.noteCarnet != null) 
-           EntitiesDatabase.UnlockNoteCarnet(resultat.noteCarnet);
+       resultat.UnlockNoteCarnet();
     }
 }

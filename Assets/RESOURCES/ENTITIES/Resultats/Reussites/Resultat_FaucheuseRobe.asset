@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
+  m_Name: Resultat_FaucheuseRobe
+  m_EditorClassIdentifier: 
+  typeResultat: 1
+  nuit: {fileID: 11400000, guid: 949889bbd18260d42a3336e3c4860198, type: 2}
+  objet: {fileID: 11400000, guid: aef62f2a60fefc34ea72d49d0b6aece4, type: 2}
+  videoClip: {fileID: 0}
+  animationClip: {fileID: 0}
+  noteCarnet:
+    nuit: La Faucheuse
+    objet: Robe
+    note: "Si je m\u2019\xE9tais dis un jour que je r\xE9glerais les probl\xE8mes
+      vestimentaires de la Faucheuse...\nElle s\u2019est empress\xE9e de se d\xE9barrasser
+      de sa vieille robe miteuse."
+    typeNote: 1

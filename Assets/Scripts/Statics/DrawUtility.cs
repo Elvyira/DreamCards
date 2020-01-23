@@ -1,9 +1,6 @@
-﻿
-using Object = UnityEngine.Object;
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System.Text.RegularExpressions;
 using System;
-using System.Linq;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;

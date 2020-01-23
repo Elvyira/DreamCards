@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
+  m_Name: Resultat_CroqueMitainePieces
+  m_EditorClassIdentifier: 
+  typeResultat: 1
+  nuit: {fileID: 11400000, guid: ef568a36b0719b442a8d70c805a1af54, type: 2}
+  objet: {fileID: 11400000, guid: 804539f36aa52574488f4035955832c3, type: 2}
+  videoClip: {fileID: 0}
+  animationClip: {fileID: 0}
+  noteCarnet:
+    nuit: Croque-Mitaine
+    objet: "Sac de Pi\xE8ces"
+    note: "En \xE9change de quelques pi\xE8ces, il m\u2019a laiss\xE9e tranquille."
+    typeNote: 1

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
+  m_Name: Resultat_NuagesLivre
+  m_EditorClassIdentifier: 
+  typeResultat: 1
+  nuit: {fileID: 11400000, guid: 01f0a6d9a4b440b41821d0c169d0b44c, type: 2}
+  objet: {fileID: 11400000, guid: f2d4564f7fd9ddf439664179325604df, type: 2}
+  videoClip: {fileID: 0}
+  animationClip: {fileID: 0}
+  noteCarnet:
+    nuit: Nuages
+    objet: Livre
+    note: "Ils se sont endormis \xE0 la lecture du trait\xE9 sur le parti dictatorial
+      et imp\xE9rialiste des manchots empereurs.\nSur les 1001 pages que contient
+      cette encyclop\xE9die il a fallu que je tombe sur cet article.\nRien que le
+      titre est \xE0 la fois absurde et soporifique..."
+    typeNote: 2

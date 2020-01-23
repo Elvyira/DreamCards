@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
+  m_Name: Resultat_FeeLanterne
+  m_EditorClassIdentifier: 
+  typeResultat: 3
+  nuit: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
+  objet: {fileID: 11400000, guid: b5c706481b369a84ca5c618f4665ec43, type: 2}
+  videoClip: {fileID: 0}
+  animationClip: {fileID: 0}
+  noteCarnet:
+    nuit: "F\xE9e"
+    objet: Lanterne
+    note: "La lumi\xE8re diffusait une chaleur si intense qu\u2019elle a fait fondre
+      les notes. La f\xE9e n\u2019\xE9tait pas contente du tout !"
+    typeNote: 3

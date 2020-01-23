@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
+  m_Name: Resultat_ValleeMortRadeau
+  m_EditorClassIdentifier: 
+  typeResultat: 2
+  nuit: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
+  objet: {fileID: 11400000, guid: a33254a4d486b6449863ceec327a9828, type: 2}
+  videoClip: {fileID: 0}
+  animationClip: {fileID: 0}
+  noteCarnet:
+    nuit: "Vall\xE9e de la Mort"
+    objet: Radeau
+    note: "Cela pourrait \xEAtre une bonne id\xE9e pour s\u2019\xE9chapper, si seulement
+      c\u2019\xE9tait de l\u2019eau..."
+    typeNote: 4

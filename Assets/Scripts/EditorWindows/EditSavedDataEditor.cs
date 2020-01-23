@@ -1,6 +1,5 @@
-﻿using System.Linq;
-#if UNITY_EDITOR
-using System;
+﻿#if UNITY_EDITOR
+using System.Linq;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -119,22 +118,26 @@ public class EditSavedDataEditor : BaseSavedDataEditorWindows
                             var notes = EntitiesDatabase.GetNotesCarnetBySommeil(sommeilEntities[sommeilIndex]);
                             var noteIndexes = 0;
 
+                            var everything = true;
+
                             for (byte j = 0; j < notes.Length; j++)
-                                if ((typeNote & notes[j].typeNote.ToNoteMask()) != 0)
-                                    noteIndexes |= j.ToByteMask();
+                                if ((typeNote & (byte) notes[j].typeNote) != 0)
+                                    noteIndexes |= j.ToBitMask();
+                                else
+                                    everything = false;
 
                             if (notes.Length > 0)
                             {
-                                var noteNames = notes.Select(x => x.nom).ToArray();
+                                var noteNames = notes.Select(x => x.objet).ToArray();
                                 DrawUtility.DrawHorizontal(() =>
                                 {
                                     EditorGUIUtility.fieldWidth = fieldWith;
-                                    noteIndexes = (byte) EditorGUILayout.MaskField("Notes", noteIndexes, noteNames);
+                                    noteIndexes = (byte) EditorGUILayout.MaskField("Notes", everything ? -1 : noteIndexes, noteNames);
 
                                     typeNote = 0;
                                     for (byte j = 0; j < notes.Length; j++)
-                                        if ((noteIndexes & j.ToByteMask()) != 0)
-                                            typeNote |= notes[j].typeNote.ToNoteMask();
+                                        if ((noteIndexes & j.ToBitMask()) != 0)
+                                            typeNote |= (byte) notes[j].typeNote;
 
                                     GUI.enabled = false;
                                     EditorGUILayout.LabelField("Notebook Entry", data.notebookEntries[i].ToString());

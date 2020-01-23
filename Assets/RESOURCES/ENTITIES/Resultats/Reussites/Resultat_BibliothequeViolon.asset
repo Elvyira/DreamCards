@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
+  m_Name: Resultat_BibliothequeViolon
+  m_EditorClassIdentifier: 
+  typeResultat: 1
+  nuit: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
+  objet: {fileID: 11400000, guid: 59c106f1205911c4aada30917e09ff02, type: 2}
+  videoClip: {fileID: 0}
+  animationClip: {fileID: 0}
+  noteCarnet:
+    nuit: "Biblioth\xE8que"
+    objet: Violon
+    note: "La m\xE9lodie stridente, les a tellement effray\xE9s qu\u2019ils sont partis
+      se r\xE9fugier dans leurs \xE9tag\xE8res.\nH\xE9, je joue si mal que \xE7a ?"
+    typeNote: 1

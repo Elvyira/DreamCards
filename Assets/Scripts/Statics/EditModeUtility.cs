@@ -1,9 +1,11 @@
 ﻿#if UNITY_EDITOR
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using Object = UnityEngine.Object;
 
 public static class EditModeUtility
 {
@@ -12,10 +14,12 @@ public static class EditModeUtility
         var activeScene = SceneManager.GetActiveScene();
         return activeScene.isLoaded ? activeScene.GetRootGameObjects() : new GameObject[0];
     }
-    
-    public static T[] FindAssetsOfType<T>() =>
-        AssetDatabase.FindAssets($"t:{typeof(T)}".Replace("UnityEngine.", "")).Select(AssetDatabase.GUIDToAssetPath)
-            .Select((s, i) => AssetDatabase.LoadAssetAtPath(s, typeof(T))).Where(asset => asset != null).Cast<T>().ToArray();
+
+    public static T[] FindAssetsOfType<T>() => FindAssetsOfType(typeof(T)).Cast<T>().ToArray();
+
+    public static Object[] FindAssetsOfType(Type type) =>
+        AssetDatabase.FindAssets($"t:{type}".Replace("UnityEngine.", "")).Select(AssetDatabase.GUIDToAssetPath)
+            .Select((s, i) => AssetDatabase.LoadAssetAtPath(s, type)).Where(asset => asset != null).ToArray();
 
     public static T FindFirstObject<T>(bool includeInactive = true) where T : Component
     {

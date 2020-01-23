@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
+  m_Name: Resultat_ValleeBonbonsEpee
+  m_EditorClassIdentifier: 
+  typeResultat: 2
+  nuit: {fileID: 11400000, guid: 31ef44e2847bdd94e81d801895bf2528, type: 2}
+  objet: {fileID: 11400000, guid: ec36af29130b8754589f7c3bb01eee44, type: 2}
+  videoClip: {fileID: 0}
+  animationClip: {fileID: 0}
+  noteCarnet:
+    nuit: "Vall\xE9e de Bonbons"
+    objet: "\xC9p\xE9e"
+    note: "Il aurait fallu \xEAtre une \xE9p\xE9iste experte pour parvenir \xE0 trancher
+      cette guimauve en plein vol...\nA\xEFe a\xEFe !"
+    typeNote: 3

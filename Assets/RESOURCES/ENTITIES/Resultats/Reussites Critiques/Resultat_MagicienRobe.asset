@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
+  m_Name: Resultat_MagicienRobe
+  m_EditorClassIdentifier: 
+  typeResultat: 0
+  nuit: {fileID: 11400000, guid: 92a669f4e362afb429ec0d9edfbb96e5, type: 2}
+  objet: {fileID: 11400000, guid: aef62f2a60fefc34ea72d49d0b6aece4, type: 2}
+  videoClip: {fileID: 0}
+  animationClip: {fileID: 0}
+  noteCarnet:
+    nom: Robe
+    note: "Il \xE9tait si press\xE9 d\u2019aller \xE0 son cours de magie qu\u2019il
+      en a oubli\xE9 sa robe.\nHeureusement, qu\u2019il y a Cassiop\xE9e \xE0 la rescousse
+      !"
+    typeNote: 0

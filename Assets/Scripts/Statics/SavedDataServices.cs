@@ -63,16 +63,16 @@ public static class SavedDataServices
     #region Static Access
 
     #region PlayerData
-    
+
     public static bool IsNoteDiscovered(byte sommeilIndex, TypeNote typeNote)
     {
         var index = NotebookEntries.GetNotebookEntryIndex(sommeilIndex);
-        return index != -1 && CheckTypeNote(NotebookEntries[index], typeNote.ToNoteMask());
+        return index != -1 && CheckTypeNote(NotebookEntries[index], (byte) typeNote);
     }
 
     public static bool DiscoverNote(byte sommeilIndex, TypeNote typeNote)
     {
-        var noteMask = typeNote.ToNoteMask();
+        var noteMask = (byte) typeNote;
         if (NotebookEntries.Count == 0)
         {
             NotebookEntries.Add(ToNotebookEntry(sommeilIndex, noteMask));
@@ -133,9 +133,7 @@ public static class SavedDataServices
     private const byte INDEX_SHIFT = 8;
     private const ushort NOTES_MASK = 0b0000000000011111;
 
-    public static byte ToNoteMask(this TypeNote typeNote) => ((byte) typeNote).ToByteMask();
-    
-    public static byte ToByteMask(this byte value) => (byte) Mathf.Pow(2, value);
+    public static byte ToBitMask(this byte value) => (byte) (1 << value);
 
     public static short GetNotebookEntryIndex(this List<ushort> notebookEntries, byte sommeilIndex)
     {
@@ -147,17 +145,17 @@ public static class SavedDataServices
     }
 
     public static byte GetSommeilIndex(ushort notebookEntry) => (byte) (notebookEntry >> INDEX_SHIFT);
-    
+
     public static ushort ToNotebookEntry(byte sommeilIndex, byte typeNote) =>
         (ushort) ((sommeilIndex << INDEX_SHIFT) + (typeNote & NOTES_MASK));
-    
+
     public static (byte sommeilIndex, byte typeNote) GetNotebookEntryValues(ushort notebookEntry) =>
         (GetSommeilIndex(notebookEntry), (byte) (notebookEntry & NOTES_MASK));
 
     private static bool CheckSommeilIndex(ushort notebookEntry, byte sommeilIndex) => (byte) (notebookEntry >> INDEX_SHIFT) == sommeilIndex;
 
     private static bool CheckTypeNote(ushort notebookEntry, byte typeNote) => (notebookEntry & NOTES_MASK & typeNote) != 0;
-    
+
 
     private static string GetPath(DataType dataType)
     {
@@ -194,17 +192,17 @@ public static class SavedDataServices
         switch (dataType)
         {
             case DataType.PlayerData:
-                return _playerData.JsonNetSerialize();
+                return JsonUtility.ToJson(_playerData);
             case DataType.SettingsData:
-                return _settingsData.JsonNetSerialize();
+                return JsonUtility.ToJson(_settingsData);
             default:
                 return null;
         }
     }
 
-    private static PlayerData JsonToPlayerData(string json) => json.JsonNetDeserialize<PlayerData>();
+    private static PlayerData JsonToPlayerData(string json) => JsonUtility.FromJson<PlayerData>(json);
 
-    private static SettingsData JsonToSettingsData(string json) => json.JsonNetDeserialize<SettingsData>();
+    private static SettingsData JsonToSettingsData(string json) => JsonUtility.FromJson<SettingsData>(json);
 
     #endregion
 

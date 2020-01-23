@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Wizcorp.Utils.Logger;
 
 namespace BarcodeScanner.Webcam
 {
