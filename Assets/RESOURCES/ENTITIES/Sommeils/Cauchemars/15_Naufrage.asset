@@ -15,7 +15,7 @@ MonoBehaviour:
   index: 15
   nom: Naufrage
   qrLink: http://qr.w69b.com/g/nIVYwfjPi
-  _codeImage: {fileID: 2800000, guid: 8a739c73de7169946a5840d4bcca9ef3, type: 3}
+  _codeImage: {fileID: 2800000, guid: 3d44832752c70d047b22267744c109ea, type: 3}
   typeSommeil: 0
   startVideoClip: {fileID: 0}
   idleVideoClip: {fileID: 0}

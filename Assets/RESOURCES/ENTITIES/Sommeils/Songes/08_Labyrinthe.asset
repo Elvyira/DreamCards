@@ -15,7 +15,7 @@ MonoBehaviour:
   index: 8
   nom: Labyrinthe
   qrLink: http://qr.w69b.com/g/uLKlcU1ri
-  _codeImage: {fileID: 2800000, guid: ceff94cb8842622498c489f54cf29dd9, type: 3}
+  _codeImage: {fileID: 2800000, guid: dfa0a10f6c0b41143b728a4bdee6a21d, type: 3}
   typeSommeil: 0
   startVideoClip: {fileID: 0}
   idleVideoClip: {fileID: 0}

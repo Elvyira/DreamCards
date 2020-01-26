@@ -15,7 +15,7 @@ MonoBehaviour:
   index: 12
   nom: Croque-Mitaine
   qrLink: http://qr.w69b.com/g/n72qYEIxi
-  _codeImage: {fileID: 2800000, guid: 511380fbdff6c204d9f27f53a426b0c5, type: 3}
+  _codeImage: {fileID: 2800000, guid: 7b0af142fa3c9834c8604456234e65a9, type: 3}
   typeSommeil: 0
   startVideoClip: {fileID: 0}
   idleVideoClip: {fileID: 0}
