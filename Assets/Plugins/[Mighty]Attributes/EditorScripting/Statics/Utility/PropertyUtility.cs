@@ -48,7 +48,7 @@ namespace MightyAttributes.Editor
             var attributes = fieldInfo.GetCustomAttributes(attributeType, true);
             if (attributes.Length > 0) attributesList.AddRange(attributes);
 
-            var customWrapperDrawer = new CustomWrapperDrawer();
+            var customWrapperDrawer = new MightyWrapperDrawer();
 
             attributesList.AddRange(MightyDrawer.GetAttributesFromCustomWrappers(attributeType, fieldInfo, customWrapperDrawer));
 
@@ -83,7 +83,7 @@ namespace MightyAttributes.Editor
 
         public static object GetAttributeTarget<T>(this SerializedProperty property) where T : Attribute
         {
-            foreach (var attribute in property.GetAttributes<CustomWrapperAttribute>())
+            foreach (var attribute in property.GetAttributes<MightyWrapperAttribute>())
             {
                 var wrappingObject = attribute.GetWrappingObject<T>();
                 if (wrappingObject != null) return wrappingObject;
@@ -94,14 +94,14 @@ namespace MightyAttributes.Editor
 
         private static object GetWrappingObject<T>(this object target) =>
             target.GetType().GetCustomAttribute(typeof(T), true) == null
-                ? target.GetType().GetCustomAttribute<CustomWrapperAttribute>()?.GetWrappingObject<T>()
+                ? target.GetType().GetCustomAttribute<MightyWrapperAttribute>()?.GetWrappingObject<T>()
                 : target;
 
         public static object GetWrappedObject(this SerializedProperty property, Type wrapperType)
         {
             if (property.GetAttribute(wrapperType) != null) return property.GetPropertyTargetReference();
 
-            foreach (var attribute in property.GetAttributes<CustomWrapperAttribute>())
+            foreach (var attribute in property.GetAttributes<MightyWrapperAttribute>())
             {
                 var wrappedObject = attribute.GetWrappedObject(wrapperType);
                 if (wrappedObject != null) return wrappedObject;
@@ -112,7 +112,7 @@ namespace MightyAttributes.Editor
 
         public static object GetWrappedObject(this object target, Type wrapperType) =>
             target.GetType().GetCustomAttribute(wrapperType, true) == null
-                ? target.GetType().GetCustomAttribute<CustomWrapperAttribute>()?.GetWrappedObject(wrapperType)
+                ? target.GetType().GetCustomAttribute<MightyWrapperAttribute>()?.GetWrappedObject(wrapperType)
                 : target;
     }
 }

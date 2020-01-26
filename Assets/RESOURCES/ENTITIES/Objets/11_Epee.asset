@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 11
   nom: "\xC9p\xE9e"
-  QRID: obj_Epee
+  qrLink: http://qr.w69b.com/g/lxlceDAqY
+  _codeImage: {fileID: 2800000, guid: 500daa27c60ad4f4691cb1da56be67f2, type: 3}
   animationClip: {fileID: 0}

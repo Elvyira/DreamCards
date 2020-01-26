@@ -270,24 +270,24 @@ namespace MightyAttributes.Editor
             {
                 if (folders != null)
                 {
-                    return AssetDatabase.FindAssets(string.Format("{0} t:{1}", name, type).Replace("UnityEngine.", ""), folders)
+                    return AssetDatabase.FindAssets($"{name} t:{type}".Replace("UnityEngine.", ""), folders)
                         .Select(AssetDatabase.GUIDToAssetPath).Select((s, i) => AssetDatabase.LoadAssetAtPath(s, type))
                         .Where(asset => asset != null).ToArray();
                 }
 
-                return AssetDatabase.FindAssets(string.Format("{0} t:{1}", name, type).Replace("UnityEngine.", ""))
+                return AssetDatabase.FindAssets($"{name} t:{type}".Replace("UnityEngine.", ""))
                     .Select(AssetDatabase.GUIDToAssetPath).Select((s, i) => AssetDatabase.LoadAssetAtPath(s, type))
                     .Where(asset => asset != null).ToArray();
             }
 
             if (folders != null)
             {
-                return AssetDatabase.FindAssets(string.Format("t:{0}", type).Replace("UnityEngine.", ""), folders)
+                return AssetDatabase.FindAssets($"t:{type}".Replace("UnityEngine.", ""), folders)
                     .Select(AssetDatabase.GUIDToAssetPath).Select((s, i) => AssetDatabase.LoadAssetAtPath(s, type))
                     .Where(asset => asset != null).ToArray();
             }
 
-            return AssetDatabase.FindAssets(string.Format("t:{0}", type).Replace("UnityEngine.", "")).Select(AssetDatabase.GUIDToAssetPath)
+            return AssetDatabase.FindAssets($"t:{type}".Replace("UnityEngine.", "")).Select(AssetDatabase.GUIDToAssetPath)
                 .Select((s, i) => AssetDatabase.LoadAssetAtPath(s, type)).Where(asset => asset != null).ToArray();
         }
 
@@ -497,7 +497,7 @@ namespace MightyAttributes.Editor
             if (string.IsNullOrWhiteSpace(callbackName)) return null;
             if (target.GetType().GetMemberInfo(callbackName, callbackSignature, out outMember)) return target;
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, callbackName, out var callbackNameValue))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, callbackName, out var callbackNameValue))
                 return target.GetWrappedObject(target.GetType()).GetCallbackTarget(callbackNameValue, callbackSignature, out outMember);
 
             return null;
@@ -510,7 +510,7 @@ namespace MightyAttributes.Editor
             if (string.IsNullOrWhiteSpace(callbackName)) return null;
             if (target.GetType().GetMemberInfo(callbackName, callbackSignature, out outMember)) return target;
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, callbackName, out var callbackNameValue))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, callbackName, out var callbackNameValue))
                 return property.GetCallbackTarget(property.GetWrappedObject(target.GetType()), callbackNameValue, callbackSignature,
                     out outMember);
 
@@ -540,7 +540,7 @@ namespace MightyAttributes.Editor
 
             if (predicate != null && predicate(memberName, out outValue)) return true;
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return target.GetWrappedObject(target.GetType()).GetValueFromMember(callbackName, out outValue, predicate);
 
             return InternalGetValueFromMember(target, memberName, true, out outValue);
@@ -561,7 +561,7 @@ namespace MightyAttributes.Editor
                 return true;
             }
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return target.GetWrappedObject(target.GetType()).GetInfoFromMember(callbackName, out mightyInfo, predicate);
 
             return InternalGetInfoFromMember(target, memberName, true, out mightyInfo);
@@ -578,7 +578,7 @@ namespace MightyAttributes.Editor
 
             if (predicate != null && predicate(memberName, out outValue)) return true;
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return property.GetValueFromMember(property.GetWrappedObject(target.GetType()),
                     callbackName, out outValue, predicate);
 
@@ -607,7 +607,7 @@ namespace MightyAttributes.Editor
                 return true;
             }
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return property.GetInfoFromMember(property.GetWrappedObject(target.GetType()), callbackName, out mightyInfo, predicate);
 
             if (InternalGetInfoFromMember(target, memberName, true, out mightyInfo))
@@ -629,7 +629,7 @@ namespace MightyAttributes.Editor
                 return false;
             }
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return property.GetMightyMethod(property.GetWrappedObject(target.GetType()), callbackName, callbackSignature,
                     out mightyMethod);
 
@@ -652,7 +652,7 @@ namespace MightyAttributes.Editor
                 return false;
             }
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return target.GetWrappedObject(target.GetType()).GetMightyMethod(callbackName, callbackSignature,
                     out mightyMethod);
 
@@ -668,7 +668,7 @@ namespace MightyAttributes.Editor
                 return false;
             }
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return property.GetMightyVoidMethod(property.GetWrappedObject(target.GetType()), callbackName, callbackSignature,
                     out mightyMethod);
 
@@ -694,7 +694,7 @@ namespace MightyAttributes.Editor
 
             if (predicate != null && predicate(memberName, out outValue)) return true;
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out callbackName))
                 return GetValueFromMember(property, property.GetWrappedObject(target.GetType()), callbackName, out callbackName,
                     out outValue);
 
@@ -829,7 +829,7 @@ namespace MightyAttributes.Editor
                 return false;
             }
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return GetArrayValueFromMember(target.GetWrappedObject(target.GetType()),
                     callbackName, out outValue);
 
@@ -845,7 +845,7 @@ namespace MightyAttributes.Editor
                 return false;
             }
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return GetArrayValueFromMember(property, property.GetWrappedObject(target.GetType()),
                     callbackName, out outValue);
 
@@ -868,7 +868,7 @@ namespace MightyAttributes.Editor
                 return false;
             }
 
-            if (target is CustomWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
+            if (target is MightyWrapperAttribute && GetCallbackName(target, memberName, out var callbackName))
                 return GetArrayInfoFromMember(property, property.GetWrappedObject(target.GetType()),
                     callbackName, out mightyInfo);
 

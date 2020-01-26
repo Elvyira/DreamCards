@@ -1,4 +1,6 @@
 ﻿using System;
+using BarcodeScanner;
+using BarcodeScanner.Parser;
 using MightyAttributes;
 using UnityEngine;
 
@@ -8,9 +10,19 @@ public abstract class CardModel : ScriptableObject
     public byte index;
 
     public string nom;
-    public string QRID;
-
+    [ReadOnly] public string qrLink;
+    [SerializeField, AssetOnly] private Texture2D _codeImage;
+    
 #if UNITY_EDITOR
+    [Button]
+    private void Scan()
+    {
+        var parser = new ZXingParser(new ScannerSettings());
+        
+        var result = parser.Decode(_codeImage.GetPixels32(), _codeImage.width, _codeImage.height);
+        qrLink = result?.Value;
+    }
+    
     protected abstract Type AssetType { get; }
     
     private bool IndexValid(byte index)
@@ -19,7 +31,7 @@ public abstract class CardModel : ScriptableObject
         {
             if (!(asset is CardModel model)) return false;
             
-            if (model.QRID == QRID) continue;
+            if (model.qrLink == qrLink) continue;
             if (model.index == index) return false;
         }
         return true;

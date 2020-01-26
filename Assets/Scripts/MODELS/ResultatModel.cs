@@ -26,7 +26,7 @@ public enum TypeNote : byte
 [Serializable]
 public class NoteCarnet
 {
-    [ReadOnly] public string nuit;
+    [ReadOnly] public string sommeil;
     [ReadOnly] public string objet;
 
     [ResizableTextArea] public string note;
@@ -41,10 +41,11 @@ public class ResultatModel : ScriptableObject
     // @formatter:off
     #region Serialized
     
-    [Header("Données résultat")] public TypeResultat typeResultat;
+    [Header("Données résultat")]
+    public TypeResultat typeResultat;
 
     [Header("Entités liées")]
-    [AssetOnly] public NuitModel nuit;
+    [AssetOnly] public SommeilModel sommeil;
     [AssetOnly] public ObjetModel objet;
 
     [Header("Données graphiques")]
@@ -57,14 +58,14 @@ public class ResultatModel : ScriptableObject
     #endregion /Serialized
     // @formatter:on
 
-    public bool CheckResultat(NuitModel nuit, ObjetModel objet)
+    public bool CheckResultat(SommeilModel sommeil, ObjetModel objet)
     {
-        return (nuit.index == this.nuit.index && objet.index == this.objet.index);
+        return (sommeil.index == this.sommeil.index && objet.index == this.objet.index);
     }
 
     public void UnlockNoteCarnet()
     {
-        if (SavedDataServices.DiscoverNote(nuit.index, noteCarnet.typeNote))
+        if (SavedDataServices.DiscoverNote(sommeil.index, noteCarnet.typeNote))
             SavedDataServices.SavePlayer();
     }
 
@@ -77,8 +78,8 @@ public class ResultatModel : ScriptableObject
     {
         if (objet != null) noteCarnet.objet = objet.nom;
 
-        if (nuit == null) return;
-        noteCarnet.nuit = nuit.nom;
+        if (sommeil == null) return;
+        noteCarnet.sommeil = sommeil.nom;
 
         switch (typeResultat)
         {
@@ -99,8 +100,8 @@ public class ResultatModel : ScriptableObject
     }
 
     private bool IsResultatTypeDuplicate(TypeNote typeNote) =>
-        nuit != null && EditModeUtility.FindAssetsOfType<ResultatModel>()
-            .Where(x => x.nuit == nuit && x.GetInstanceID() != GetInstanceID())
+        sommeil != null && EditModeUtility.FindAssetsOfType<ResultatModel>()
+            .Where(x => x.sommeil == sommeil && x.GetInstanceID() != GetInstanceID())
             .Any(x => x.noteCarnet.typeNote == typeNote);
 
     #endregion /Editor

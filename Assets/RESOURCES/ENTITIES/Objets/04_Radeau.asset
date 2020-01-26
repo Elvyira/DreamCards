@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 4
   nom: Radeau
-  QRID: obj_Radeau
+  qrLink: http://qr.w69b.com/g/rHGthubyo
+  _codeImage: {fileID: 2800000, guid: 45a96d2914ddedd4ab250d4c713c45b7, type: 3}
   animationClip: {fileID: 0}
