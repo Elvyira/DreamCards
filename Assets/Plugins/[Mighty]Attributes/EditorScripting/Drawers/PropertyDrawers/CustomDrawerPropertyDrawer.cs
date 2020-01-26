@@ -99,7 +99,7 @@ namespace MightyAttributes.Editor
             var attribute = (CustomDrawerAttribute) mightyAttribute;
             var target = mightyMember.InitAttributeTarget<CustomDrawerAttribute>();
 
-            if (!mightyMember.Property.isArray)
+            if (!mightyMember.Property.isArray || mightyMember.Property.propertyType == SerializedPropertyType.String)
                 InitCallback(mightyMember, target, attribute, m_propertyCallback);
             else
             {

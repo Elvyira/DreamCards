@@ -91,7 +91,7 @@ namespace MightyAttributes.Editor
 
             m_serializeFieldsCache = new MightyMemberCache<FieldInfo>();
 
-            var customWrapperDrawer = new CustomWrapperDrawer();
+            var customWrapperDrawer = new MightyWrapperDrawer();
 
             if ((hideStatus & HideStatus.Content) != HideStatus.Content)
             {
@@ -999,51 +999,51 @@ namespace MightyAttributes.Editor
 
         #region Wrapped Attributes Getters
 
-        public static T[] GetAttributesFromCustomWrappers<T>(FieldInfo field, CustomWrapperDrawer drawer) where T : Attribute
+        public static T[] GetAttributesFromCustomWrappers<T>(FieldInfo field, MightyWrapperDrawer drawer) where T : Attribute
         {
             var wrappedAttributes = new List<T>();
 
-            if (field.GetCustomAttributes(typeof(CustomWrapperAttribute), true) is CustomWrapperAttribute[] customWrapperAttributes
+            if (field.GetCustomAttributes(typeof(MightyWrapperAttribute), true) is MightyWrapperAttribute[] customWrapperAttributes
                 && customWrapperAttributes.Length > 0)
                 GetAttributesFromCustomWrapper(drawer, customWrapperAttributes, wrappedAttributes);
 
             return wrappedAttributes.ToArray();
         }
 
-        public static void GetAttributesFromCustomWrapper<T>(CustomWrapperDrawer drawer, CustomWrapperAttribute[] wrappers,
+        public static void GetAttributesFromCustomWrapper<T>(MightyWrapperDrawer drawer, MightyWrapperAttribute[] wrappers,
             List<T> wrappedAttributes) where T : Attribute
         {
             foreach (var wrapper in wrappers)
             {
-                var newWrapperAttributes = drawer.GetAttributes<CustomWrapperAttribute>(wrapper.GetType());
+                var newWrapperAttributes = drawer.GetAttributes<MightyWrapperAttribute>(wrapper.GetType());
                 if (newWrapperAttributes.Length > 0)
                     GetAttributesFromCustomWrapper(drawer, newWrapperAttributes, wrappedAttributes);
 
-                wrappedAttributes.AddRange(drawer.GetAttributes<T>(wrapper.GetType()).Where(x => !(x is BaseWrapperAttribute)));
+                wrappedAttributes.AddRange(drawer.GetAttributes<T>(wrapper.GetType()).Where(x => !(x is MightyWrapperAttribute)));
             }
         }
 
-        public static object[] GetAttributesFromCustomWrappers(Type attributeType, FieldInfo field, CustomWrapperDrawer drawer)
+        public static object[] GetAttributesFromCustomWrappers(Type attributeType, FieldInfo field, MightyWrapperDrawer drawer)
         {
             var wrappedAttributes = new List<object>();
 
-            if (field.GetCustomAttributes(typeof(CustomWrapperAttribute), true) is CustomWrapperAttribute[] customWrapperAttributes &&
+            if (field.GetCustomAttributes(typeof(MightyWrapperAttribute), true) is MightyWrapperAttribute[] customWrapperAttributes &&
                 customWrapperAttributes.Length > 0)
                 GetAttributesFromCustomWrapper(attributeType, drawer, customWrapperAttributes, wrappedAttributes);
 
             return wrappedAttributes.ToArray();
         }
 
-        public static void GetAttributesFromCustomWrapper(Type attributeType, CustomWrapperDrawer drawer, CustomWrapperAttribute[] wrappers,
+        public static void GetAttributesFromCustomWrapper(Type attributeType, MightyWrapperDrawer drawer, MightyWrapperAttribute[] wrappers,
             List<object> wrappedAttributes)
         {
             foreach (var wrapper in wrappers)
             {
-                var newWrapperAttributes = drawer.GetAttributes<CustomWrapperAttribute>(wrapper.GetType());
+                var newWrapperAttributes = drawer.GetAttributes<MightyWrapperAttribute>(wrapper.GetType());
                 if (newWrapperAttributes.Length > 0)
                     GetAttributesFromCustomWrapper(attributeType, drawer, newWrapperAttributes, wrappedAttributes);
 
-                wrappedAttributes.AddRange(drawer.GetAttributes(wrapper.GetType(), attributeType).Where(x => !(x is BaseWrapperAttribute)));
+                wrappedAttributes.AddRange(drawer.GetAttributes(wrapper.GetType(), attributeType).Where(x => !(x is MightyWrapperAttribute)));
             }
         }
 

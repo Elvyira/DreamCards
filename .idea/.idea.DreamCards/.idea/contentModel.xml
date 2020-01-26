@@ -160,8 +160,7 @@
                   <e p="ValidateInputPropertyValidator.cs" t="Include" />
                 </e>
                 <e p="WrapperDrawer" t="Include">
-                  <e p="BaseWrapperDrawer.cs" t="Include" />
-                  <e p="CustomWrapperDrawer.cs" t="Include" />
+                  <e p="MightyWrapperDrawer.cs" t="Include" />
                 </e>
               </e>
               <e p="DrawerTargetAttribute.cs" t="Include" />
@@ -209,7 +208,7 @@
                   <e p="HideClassAttribute.cs" t="Include" />
                   <e p="HideStatusClassAttribute.cs" t="Include" />
                 </e>
-                <e p="DefaultCustomWrappers" t="Include">
+                <e p="DefaultMightyWrappers" t="Include">
                   <e p="BeginHorizontalWidthAttribute.cs" t="Include" />
                   <e p="DarkSerializableAttribute.cs" t="Include" />
                   <e p="EndHorizontalWidthAttribute.cs" t="Include" />
@@ -371,8 +370,7 @@
                   <e p="ShowNativePropertyAttribute.cs" t="Include" />
                 </e>
                 <e p="WrapperAttributes" t="Include">
-                  <e p="BaseWrapperAttribute.cs" t="Include" />
-                  <e p="CustomWrapperAttribute.cs" t="Include" />
+                  <e p="MightyWrapperAttribute.cs" t="Include" />
                 </e>
               </e>
               <e p="EnumsUtilities.cs" t="Include" />
@@ -389,17 +387,27 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="CustomMightyWrappers" t="Include">
+            <e p="EntitiesAttribute.cs" t="Include" />
+            <e p="ManagerAttribute.cs" t="Include" />
+          </e>
           <e p="EditorWindows" t="Include">
             <e p="BaseEditorWindow.cs" t="Include" />
             <e p="BaseSavedDataEditorWindows.cs" t="Include" />
             <e p="EditSavedDataEditor.cs" t="Include" />
           </e>
           <e p="EntitiesDatabase.cs" t="Include" />
+          <e p="Managers" t="Include">
+            <e p="GameManager.cs" t="Include" />
+            <e p="ScannerManager.cs" t="Include" />
+            <e p="TurnManager.cs" t="Include" />
+            <e p="VideoManager.cs" t="Include" />
+          </e>
           <e p="MODELS" t="Include">
             <e p="CardModel.cs" t="Include" />
-            <e p="NuitModel.cs" t="Include" />
             <e p="ObjetModel.cs" t="Include" />
             <e p="ResultatModel.cs" t="Include" />
+            <e p="SommeilModel.cs" t="Include" />
           </e>
           <e p="Scanner" t="Include">
             <e p="External" t="Include">
@@ -429,20 +437,18 @@
               <e p="ScannerStatus.cs" t="Include" />
             </e>
             <e p="Settings" t="Include">
+              <e p="CustomScannerSettings.cs" t="Include" />
               <e p="ScannerSettings.cs" t="Include" />
             </e>
             <e p="Webcam" t="Include">
               <e p="UnityWebcam.cs" t="Include" />
             </e>
           </e>
-          <e p="ScannerManager.cs" t="Include" />
           <e p="Statics" t="Include">
             <e p="DrawUtility.cs" t="Include" />
             <e p="EditModeUtility.cs" t="Include" />
             <e p="SavedDataServices.cs" t="Include" />
           </e>
-          <e p="TurnManager.cs" t="Include" />
-          <e p="VideoManager.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

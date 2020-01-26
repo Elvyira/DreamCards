@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   nom: Baguette Magique
-  QRID: obj_BaguetteMagique
+  qrLink: http://qr.w69b.com/g/udfj4n0re
+  _codeImage: {fileID: 2800000, guid: f8241ae3e8a796d4391071c62a65bfc8, type: 3}
   animationClip: {fileID: 0}

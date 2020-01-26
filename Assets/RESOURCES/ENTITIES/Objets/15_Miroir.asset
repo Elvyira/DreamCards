@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 15
   nom: Miroir
-  QRID: obj_Miroir
+  qrLink: http://qr.w69b.com/g/pHuYbyUoM
+  _codeImage: {fileID: 2800000, guid: cf6fdd581ce99be4489f924259b378d1, type: 3}
   animationClip: {fileID: 0}

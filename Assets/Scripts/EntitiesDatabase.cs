@@ -8,63 +8,72 @@ using UnityEngine;
 
 public class EntitiesDatabase : MonoBehaviour
 {
-    [SerializeField, ReadOnly, FindAssets] private NuitModel[] _sommeilEntities;
-    [SerializeField, ReadOnly, FindAssets] private ObjetModel[] _objetEntities;
-    [SerializeField, ReadOnly, FindAssets] private ResultatModel[] _resultatEntities;
+    #region Serialized
+
+    [SerializeField, Entities] private SommeilModel[] _sommeilEntities;
+    [SerializeField, Entities] private ObjetModel[] _objetEntities;
+    [SerializeField, Entities] private ResultatModel[] _resultatEntities;
+
+    #endregion /Serialized
+
+    #region Instance
 
     private static EntitiesDatabase m_instance;
 
-    private static EntitiesDatabase Instance => m_instance ? m_instance : m_instance = EditModeUtility.FindFirstObject<EntitiesDatabase>();
+#if UNITY_EDITOR
+    public static EntitiesDatabase Instance => m_instance ? m_instance : m_instance = EditModeUtility.FindFirstObject<EntitiesDatabase>();
+#else
+    public static EntitiesDatabase Instance => m_instance;
+#endif
 
-    public static NuitModel[] SommeilEntities => Instance._sommeilEntities;
+    #endregion /Instance
+
+    public static SommeilModel[] SommeilEntities => Instance._sommeilEntities;
     public static ObjetModel[] ObjetEntities => Instance._objetEntities;
     public static ResultatModel[] ResultatEntities => Instance._resultatEntities;
 
-    private void Awake()
-    {
-        m_instance = this;
-    }
+    private void Awake() => m_instance = this;
 
-    public static CardModel GetCard(string qrid)
+    public static CardModel GetCard(string qrLink)
     {
-        var card = GetSommeil(qrid);
-        if (card == null) return GetObjet(qrid);
+        var card = GetSommeil(qrLink);
+        if (card == null) return GetObjet(qrLink);
         return card;
     }
 
-    public static NuitModel GetSommeil(string qrid)
+    public static SommeilModel GetSommeil(string qrLink)
     {
         foreach (var sommeil in m_instance._sommeilEntities)
-            if (sommeil.QRID == qrid)
+            if (sommeil.qrLink == qrLink)
                 return sommeil;
 
         return null;
     }
 
-    public static ObjetModel GetObjet(string qrid)
+    public static ObjetModel GetObjet(string qrLink)
     {
-        foreach (var action in m_instance._objetEntities)
-            if (action.QRID == qrid)
-                return action;
+        foreach (var objet in m_instance._objetEntities)
+            if (objet.qrLink == qrLink)
+                return objet;
 
         return null;
     }
 
-    public static ResultatModel GetResultat(NuitModel nuit, ObjetModel objet)
+    public static ResultatModel GetResultat(SommeilModel sommeil, ObjetModel objet)
     {
         foreach (var resultat in m_instance._resultatEntities)
-            if (resultat.CheckResultat(nuit, objet))
+            if (resultat.CheckResultat(sommeil, objet))
                 return resultat;
 
         return null;
     }
 
-    public static NoteCarnet[] GetNotesCarnetBySommeil(NuitModel nuit)
+    public static NoteCarnet[] GetNotesCarnetBySommeil(SommeilModel sommeil)
     {
         var entriesList = new List<NoteCarnet>();
 
         foreach (var resultat in m_instance._resultatEntities)
-            if (resultat.nuit.index == nuit.index)
+            if (resultat.sommeil.index == sommeil.index)
                 entriesList.Add(resultat.noteCarnet);
 
         return entriesList.ToArray();
@@ -75,36 +84,36 @@ public class EntitiesDatabase : MonoBehaviour
         var entriesList = new List<NoteCarnet>();
 
         foreach (var resultat in m_instance._resultatEntities)
-            if (SavedDataServices.IsNoteDiscovered(resultat.nuit.index, resultat.noteCarnet.typeNote))
+            if (SavedDataServices.IsNoteDiscovered(resultat.sommeil.index, resultat.noteCarnet.typeNote))
                 entriesList.Add(resultat.noteCarnet);
 
         return entriesList.ToArray();
     }
 
-    public static NoteCarnet[] GetUnlockedNotesCarnet(NuitModel nuit)
+    public static NoteCarnet[] GetUnlockedNotesCarnet(SommeilModel sommeil)
     {
         var entriesList = new List<NoteCarnet>();
 
         foreach (var resultat in m_instance._resultatEntities)
-            if (resultat.nuit.index == nuit.index &&
-                SavedDataServices.IsNoteDiscovered(resultat.nuit.index, resultat.noteCarnet.typeNote))
+            if (resultat.sommeil.index == sommeil.index &&
+                SavedDataServices.IsNoteDiscovered(resultat.sommeil.index, resultat.noteCarnet.typeNote))
                 entriesList.Add(resultat.noteCarnet);
 
         return entriesList.ToArray();
     }
 
 #if UNITY_EDITOR
-    
+
     #region Editor
 
     [Button]
     private void RefreshDatabase()
     {
-        _sommeilEntities = new NuitModel[0];
+        _sommeilEntities = new SommeilModel[0];
         _objetEntities = new ObjetModel[0];
         _resultatEntities = new ResultatModel[0];
     }
-    
+
     [OnInspectorGUI]
     private void OrderEntities()
     {

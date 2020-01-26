@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 10
   nom: Bouclier
-  QRID: obj_Bouclier
+  qrLink: http://qr.w69b.com/g/mQi5JEspi
+  _codeImage: {fileID: 2800000, guid: 3ebfb78f954012947b5b77c1fcde9a4e, type: 3}
   animationClip: {fileID: 0}

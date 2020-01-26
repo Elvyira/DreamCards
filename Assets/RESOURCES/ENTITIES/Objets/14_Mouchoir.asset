@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 14
   nom: Mouchoir
-  QRID: obj_Mouchoir
+  qrLink: http://qr.w69b.com/g/oU6zl17mE
+  _codeImage: {fileID: 2800000, guid: 81bb0ed38415768409e607091b03ce1b, type: 3}
   animationClip: {fileID: 0}

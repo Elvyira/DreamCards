@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 16
   nom: Ballons
-  QRID: obj_Ballons
+  qrLink: http://qr.w69b.com/g/s798LYsjC
+  _codeImage: {fileID: 2800000, guid: 0ee358d29da73964f8a0d4bb1cbcdb84, type: 3}
   animationClip: {fileID: 0}
