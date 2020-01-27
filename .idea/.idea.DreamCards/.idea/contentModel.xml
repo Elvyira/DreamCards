@@ -387,6 +387,12 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Animations" t="Include">
+            <e p="AnimationEventsBehaviour.cs" t="Include" />
+            <e p="AnimatorBoolEventsBehaviour.cs" t="Include" />
+            <e p="AnimatorParameterBehaviour.cs" t="Include" />
+            <e p="BaseEventsBehaviour.cs" t="Include" />
+          </e>
           <e p="CustomMightyWrappers" t="Include">
             <e p="EntitiesAttribute.cs" t="Include" />
             <e p="ManagerAttribute.cs" t="Include" />
@@ -397,8 +403,13 @@
             <e p="EditSavedDataEditor.cs" t="Include" />
           </e>
           <e p="EntitiesDatabase.cs" t="Include" />
+          <e p="GUI" t="Include">
+            <e p="FadeScreen.cs" t="Include" />
+            <e p="TurnStateLabel.cs" t="Include" />
+          </e>
           <e p="Managers" t="Include">
             <e p="GameManager.cs" t="Include" />
+            <e p="GUIManager.cs" t="Include" />
             <e p="ScannerManager.cs" t="Include" />
             <e p="TurnManager.cs" t="Include" />
             <e p="VideoManager.cs" t="Include" />
@@ -449,8 +460,8 @@
             <e p="EditModeUtility.cs" t="Include" />
             <e p="SavedDataServices.cs" t="Include" />
           </e>
-          <e p="TurnStateLabel.cs" t="Include" />
           <e p="UnityEvents" t="Include">
+            <e p="BoolEvent.cs" t="Include" />
             <e p="StringEvent.cs" t="Include" />
             <e p="TurnStateEvent.cs" t="Include" />
           </e>

@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEditor;
+#endif
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     #region Serialized
 
+    [SerializeField, Manager] private GUIManager _guiManager;
     [SerializeField, Manager] private TurnManager _turnManager;
     [SerializeField, Manager] private ScannerManager _scannerManager;
     [SerializeField, Manager] private VideoManager _videoManager;
@@ -25,9 +29,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         m_instance = this;
-        
         SavedDataServices.LoadEverything();
-        
+
+        _guiManager.Init();
         _turnManager.Init();
         _scannerManager.Init();
         _videoManager.Init();
@@ -36,5 +40,14 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         _scannerManager.UpdateManager();
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
