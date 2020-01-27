@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     {
         m_instance = this;
         
+        SavedDataServices.LoadEverything();
+        
         _turnManager.Init();
         _scannerManager.Init();
         _videoManager.Init();

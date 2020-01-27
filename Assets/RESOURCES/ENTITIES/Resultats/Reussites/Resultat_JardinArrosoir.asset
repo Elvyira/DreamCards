@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_JardinArrosoir
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 185fe34cf82be7342b81c9b659d75d6b, type: 2}
+  sommeil: {fileID: 11400000, guid: 185fe34cf82be7342b81c9b659d75d6b, type: 2}
   objet: {fileID: 11400000, guid: 8a76724216c0fa246abdf7a728f55eb8, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Jardin Fleuri
+    sommeil: Jardin Fleuri
     objet: Arrosoir
     note: "Le jardin \xE9tait si reconnaissant pour toute cette eau que m\xEAme les
       plantes en verre ont \xE9clos. Impressionnant !"
-    typeNote: 1
+    typeNote: 2

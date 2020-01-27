@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_LabyrinthePieces
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 3e2481a1820ef1942ba22899c8d38f6e, type: 2}
+  sommeil: {fileID: 11400000, guid: 3e2481a1820ef1942ba22899c8d38f6e, type: 2}
   objet: {fileID: 11400000, guid: 804539f36aa52574488f4035955832c3, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Labyrinthe
+    sommeil: Labyrinthe
     objet: "Sac de Pi\xE8ces"
     note: "La porte bloquant l\u2019acc\xE8s vers la sortie poss\xE9dait une fente
       pour ins\xE9rer des pi\xE8ces."
-    typeNote: 2
+    typeNote: 4

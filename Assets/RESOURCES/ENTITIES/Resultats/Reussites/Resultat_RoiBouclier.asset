@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Resultat_RoiBouclier
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: a60fb83c8bd32e04595938c9d8cb7029, type: 2}
+  sommeil: {fileID: 11400000, guid: a60fb83c8bd32e04595938c9d8cb7029, type: 2}
   objet: {fileID: 11400000, guid: 21f9be8bb2af88b49bc17addd1a0de25, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Bouclier
+    sommeil: Roi
+    objet: Bouclier
     note: "C\u2019est fou le nombre de personnes qui \xE9garent leurs objets. G.M.
       faisait r\xE9f\xE9rence aux initiales du roi.\nIl y a m\xEAme ses armoiries
       en dessous."
-    typeNote: 1
+    typeNote: 2

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MirageLanterne
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: 5e3a4110232f0f2488776881c1202c76, type: 2}
+  sommeil: {fileID: 11400000, guid: 5e3a4110232f0f2488776881c1202c76, type: 2}
   objet: {fileID: 11400000, guid: b5c706481b369a84ca5c618f4665ec43, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Mirage
+    sommeil: Mirage
     objet: Lanterne
     note: "La lumi\xE8re \xE9mise par la lanterne \xE9tait plus vive que ce mirage,
       ce qui m\u2019a permis d\u2019avancer."
-    typeNote: 0
+    typeNote: 1

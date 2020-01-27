@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_FaucheuseMontre
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: 949889bbd18260d42a3336e3c4860198, type: 2}
+  sommeil: {fileID: 11400000, guid: 949889bbd18260d42a3336e3c4860198, type: 2}
   objet: {fileID: 11400000, guid: ee028ea56fd6fb247aaabc5fa7b113e1, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Montre
+    sommeil: La Faucheuse
+    objet: Montre
     note: "C\u2019\xE9tait donc le fameux secret de la Faucheuse pour toujours frapper
       \xE0 l\u2019heure."
-    typeNote: 0
+    typeNote: 1

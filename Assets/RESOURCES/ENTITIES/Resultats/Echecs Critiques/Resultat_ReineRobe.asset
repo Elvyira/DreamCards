@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa89bbf6bfde2e42a08c6dbc25abb1f, type: 3}
   m_Name: Resultat_ReineRobe
   m_EditorClassIdentifier: 
-  typeResultat: 3
-  nuit: {fileID: 11400000, guid: 91b4e0441bbf50b468100766c7e753bd, type: 2}
+  typeResultat: 2
+  sommeil: {fileID: 11400000, guid: 91b4e0441bbf50b468100766c7e753bd, type: 2}
   objet: {fileID: 11400000, guid: aef62f2a60fefc34ea72d49d0b6aece4, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Reine
+    sommeil: Reine
     objet: Robe
     note: "Oups, j\u2019ai fr\xF4l\xE9 l\u2019incident diplomatique, elle a cr\xFB
       que je ne trouvais pas ses habits assez nobles.\nJe pense qu\u2019elle pr\xE9f\xE8re
       acheter elle-m\xEAme ses v\xEAtements..."
-    typeNote: 3
+    typeNote: 8

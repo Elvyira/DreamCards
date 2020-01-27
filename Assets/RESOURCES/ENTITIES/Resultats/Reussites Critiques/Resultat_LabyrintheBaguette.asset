@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Resultat_LabyrintheBaguette
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: 3e2481a1820ef1942ba22899c8d38f6e, type: 2}
+  sommeil: {fileID: 11400000, guid: 3e2481a1820ef1942ba22899c8d38f6e, type: 2}
   objet: {fileID: 11400000, guid: 7a3a9ad14610ead4c9bd602d13331bbf, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Baguette Magique
+    sommeil: Labyrinthe
+    objet: Baguette Magique
     note: "Alohomora ! Cela d\xE9verrouille toutes les serrures \xE9videmment !"
-    typeNote: 0
+    typeNote: 1

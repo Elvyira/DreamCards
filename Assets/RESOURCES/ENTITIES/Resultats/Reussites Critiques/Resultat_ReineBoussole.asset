@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_ReineBoussole
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: 91b4e0441bbf50b468100766c7e753bd, type: 2}
+  sommeil: {fileID: 11400000, guid: 91b4e0441bbf50b468100766c7e753bd, type: 2}
   objet: {fileID: 11400000, guid: 1061ce65a2b73cd4f9de80922e8103df, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Compas boussole
+    sommeil: Reine
+    objet: Compas Boussole
     note: "Pour une passionn\xE9e d\u2019\xE9toiles, c\u2019\xE9tait le meilleur cadeau
       qu\u2019on puisse lui faire, m\xEAme son mari n\u2019y a pas pens\xE9 !"
-    typeNote: 0
+    typeNote: 1

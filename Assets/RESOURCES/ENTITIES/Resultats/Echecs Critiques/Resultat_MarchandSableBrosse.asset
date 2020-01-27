@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MarchandSableBrosse
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: e0868c39cfc254b43bca9f16907f82e8, type: 2}
+  sommeil: {fileID: 11400000, guid: e0868c39cfc254b43bca9f16907f82e8, type: 2}
   objet: {fileID: 11400000, guid: d56e4efc695805540a945503974a3c88, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Marchand de Sable
+    sommeil: Marchand de Sable
     objet: Brosse
     note: "En utilisant ma brosse, j\u2019ai dispers\xE9 le sable partout...\nIl \xE9tait
       furieux."
-    typeNote: 4
+    typeNote: 8

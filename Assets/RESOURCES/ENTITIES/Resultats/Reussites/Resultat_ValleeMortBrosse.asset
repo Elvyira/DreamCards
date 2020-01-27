@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Resultat_ValleeMortBrosse
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
+  sommeil: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
   objet: {fileID: 11400000, guid: d56e4efc695805540a945503974a3c88, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Vall\xE9e de la Mort"
+    sommeil: "Vall\xE9e de la Mort"
     objet: Brosse
     note: "Oh, mais ce n\u2019\xE9tait pas juste un d\xE9sert, j\u2019\xE9tais \xE0
       l\u2019int\xE9rieur d\u2019une bouche !\nEt ces monstres, des caries !\nElle
       avait bien besoin d\u2019un coup de brosse, il ne manquait que le dentifrice
       !\u201D"
-    typeNote: 1
+    typeNote: 2

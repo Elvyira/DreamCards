@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_JardinClef
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: 185fe34cf82be7342b81c9b659d75d6b, type: 2}
+  sommeil: {fileID: 11400000, guid: 185fe34cf82be7342b81c9b659d75d6b, type: 2}
   objet: {fileID: 11400000, guid: f501e0cc444b96347b29b901c7780e99, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Jardin Fleuri
+    sommeil: Jardin Fleuri
     objet: Clef
     note: "Je n\u2019aurais pas d\xFB ouvrir ce coffre... il renfermait des araign\xE9es.\nPourquoi
       a-t-il fallu que ce soit des ARAIGN\xC9ES?!"
-    typeNote: 3
+    typeNote: 8

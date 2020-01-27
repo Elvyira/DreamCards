@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_ValleeBonbonsMouchoir
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 31ef44e2847bdd94e81d801895bf2528, type: 2}
+  sommeil: {fileID: 11400000, guid: 31ef44e2847bdd94e81d801895bf2528, type: 2}
   objet: {fileID: 11400000, guid: 206daa89186408c4fad28e156d208c60, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Vall\xE9e de Bonbons"
+    sommeil: "Vall\xE9e de Bonbons"
     objet: Mouchoir
     note: "J\u2019ai pu faire un cessez le feu simplement en hissant le mouchoir en
       drapeau blanc."
-    typeNote: 1
+    typeNote: 4

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_IleLivre
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: d73f288e57af0964495924bef2c10b57, type: 2}
+  sommeil: {fileID: 11400000, guid: d73f288e57af0964495924bef2c10b57, type: 2}
   objet: {fileID: 11400000, guid: f2d4564f7fd9ddf439664179325604df, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "\xCEle D\xE9serte"
+    sommeil: "\xCEle D\xE9serte"
     objet: Livre
     note: "J\u2019ai de quoi m\u2019occuper pendant un moment avec cette encyclop\xE9die
       !"
-    typeNote: 1
+    typeNote: 4

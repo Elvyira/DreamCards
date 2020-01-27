@@ -52,11 +52,5 @@ public class ScannerManager : MonoBehaviour
 
     public void Stop() => m_barcodeScanner.Stop();
 
-    private void OnCardScanned(string barCodeType, string barCodeValue)
-    {
-        m_barcodeScanner.Stop();
-        Debug.Log(barCodeValue);
-
-        _turnManager.SelectCard(EntitiesDatabase.GetCard(barCodeValue));
-    }
+    private void OnCardScanned(string barCodeType, string barCodeValue) => _turnManager.SelectCard(EntitiesDatabase.GetCard(barCodeValue));
 }

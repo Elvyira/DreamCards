@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Resultat_ReineMontre
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 91b4e0441bbf50b468100766c7e753bd, type: 2}
+  sommeil: {fileID: 11400000, guid: 91b4e0441bbf50b468100766c7e753bd, type: 2}
   objet: {fileID: 11400000, guid: ee028ea56fd6fb247aaabc5fa7b113e1, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Reine
+    sommeil: Reine
     objet: Montre
     note: "Vu la richesse des d\xE9corations, il \xE9tait \xE9vident qu\u2019il appartenait
       \xE0 la famille royale.\nCependant, je ne savais pas qu\u2019elle avait un penchant
       pour ce genre d\u2019ornement."
-    typeNote: 1
+    typeNote: 2

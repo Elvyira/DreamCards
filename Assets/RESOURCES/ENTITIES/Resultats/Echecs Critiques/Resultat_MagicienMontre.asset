@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MagicienMontre
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: 92a669f4e362afb429ec0d9edfbb96e5, type: 2}
+  sommeil: {fileID: 11400000, guid: 92a669f4e362afb429ec0d9edfbb96e5, type: 2}
   objet: {fileID: 11400000, guid: ee028ea56fd6fb247aaabc5fa7b113e1, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: L'Apprenti Magicien
+    sommeil: L'Apprenti Magicien
     objet: Montre
     note: "Il ne semble pas avoir appr\xE9ci\xE9 que je lui rappelle son retard en
       lui tendant cette montre..."
-    typeNote: 3
+    typeNote: 8

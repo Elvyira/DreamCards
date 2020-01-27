@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_ValleeMortRadeau
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
+  sommeil: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
   objet: {fileID: 11400000, guid: a33254a4d486b6449863ceec327a9828, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Vall\xE9e de la Mort"
+    sommeil: "Vall\xE9e de la Mort"
     objet: Radeau
     note: "Cela pourrait \xEAtre une bonne id\xE9e pour s\u2019\xE9chapper, si seulement
       c\u2019\xE9tait de l\u2019eau..."
-    typeNote: 4
+    typeNote: 8

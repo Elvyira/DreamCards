@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Resultat_FeeSablier
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
+  sommeil: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
   objet: {fileID: 11400000, guid: 7f1a0e40a0878e74e8b975b144fd6045, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Sablier
+    sommeil: "F\xE9e"
+    objet: Sablier
     note: "Elle avait presque \xE9puis\xE9 l\u2019int\xE9gralit\xE9 de sa poussi\xE8re
       de f\xE9e avec ses cr\xE9ations musicales.\nPar chance, ce sablier contenait
       du sable en quantit\xE9 in\xE9puisable ayant les m\xEAmes propri\xE9t\xE9s !"
-    typeNote: 0
+    typeNote: 1

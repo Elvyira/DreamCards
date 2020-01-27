@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_NuagesSablier
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 01f0a6d9a4b440b41821d0c169d0b44c, type: 2}
+  sommeil: {fileID: 11400000, guid: 01f0a6d9a4b440b41821d0c169d0b44c, type: 2}
   objet: {fileID: 11400000, guid: 7f1a0e40a0878e74e8b975b144fd6045, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Nuages
+    sommeil: Nuages
     objet: Sablier
     note: "Ils semblaient tr\xE8s agit\xE9s, ce sable magique a eu un effet soporifique
       pour eux et les a calm\xE9."
-    typeNote: 1
+    typeNote: 4

@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_BibliothequeClef
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
+  sommeil: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
   objet: {fileID: 11400000, guid: f501e0cc444b96347b29b901c7780e99, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Clef
+    sommeil: "Biblioth\xE8que"
+    objet: Clef
     note: "Houl\xE0, remettons-vite ces livres fous sous clef avant qu\u2019ils ne
       s\u2019\xE9chappent !"
-    typeNote: 0
+    typeNote: 1

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Resultat_FeeMontre
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
+  sommeil: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
   objet: {fileID: 11400000, guid: ee028ea56fd6fb247aaabc5fa7b113e1, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "F\xE9e"
+    sommeil: "F\xE9e"
     objet: Montre
     note: "Ing\xE9nieux ! Le tic tac produit par la montre lui a servi de m\xE9tronome."
-    typeNote: 2
+    typeNote: 4

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_ValleeBonbonsEpee
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: 31ef44e2847bdd94e81d801895bf2528, type: 2}
+  sommeil: {fileID: 11400000, guid: 31ef44e2847bdd94e81d801895bf2528, type: 2}
   objet: {fileID: 11400000, guid: ec36af29130b8754589f7c3bb01eee44, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Vall\xE9e de Bonbons"
+    sommeil: "Vall\xE9e de Bonbons"
     objet: "\xC9p\xE9e"
     note: "Il aurait fallu \xEAtre une \xE9p\xE9iste experte pour parvenir \xE0 trancher
       cette guimauve en plein vol...\nA\xEFe a\xEFe !"
-    typeNote: 3
+    typeNote: 8

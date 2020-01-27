@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_LabyrintheClef
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 3e2481a1820ef1942ba22899c8d38f6e, type: 2}
+  sommeil: {fileID: 11400000, guid: 3e2481a1820ef1942ba22899c8d38f6e, type: 2}
   objet: {fileID: 11400000, guid: f501e0cc444b96347b29b901c7780e99, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Labyrinthe
+    sommeil: Labyrinthe
     objet: Clef
     note: "Cette clef passe-partout a ouvert la porte !\nSuper, la sortie se trouvait
       juste derri\xE8re."
-    typeNote: 1
+    typeNote: 2

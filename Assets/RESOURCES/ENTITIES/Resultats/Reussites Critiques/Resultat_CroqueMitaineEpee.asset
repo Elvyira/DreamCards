@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_CroqueMitaineEpee
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: ef568a36b0719b442a8d70c805a1af54, type: 2}
+  sommeil: {fileID: 11400000, guid: ef568a36b0719b442a8d70c805a1af54, type: 2}
   objet: {fileID: 11400000, guid: ec36af29130b8754589f7c3bb01eee44, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: "\xC9p\xE9e"
+    sommeil: Croque-Mitaine
+    objet: "\xC9p\xE9e"
     note: "J\u2019ai pris mon courage \xE0 deux mains pour affronter ce vilain croque-mitaine.\nL\u2019\xE9p\xE9e
       a \xE9t\xE9 particuli\xE8rement efficace contre lui !"
-    typeNote: 0
+    typeNote: 1

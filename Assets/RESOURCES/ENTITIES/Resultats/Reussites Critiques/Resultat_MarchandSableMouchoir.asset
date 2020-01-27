@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Resultat_MarchandSableMouchoir
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: e0868c39cfc254b43bca9f16907f82e8, type: 2}
+  sommeil: {fileID: 11400000, guid: e0868c39cfc254b43bca9f16907f82e8, type: 2}
   objet: {fileID: 11400000, guid: 206daa89186408c4fad28e156d208c60, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Mouchoir
+    sommeil: Marchand de Sable
+    objet: Mouchoir
     note: "A force de jeter du sable pour aider les enfants \xE0 dormir, le Marchand
       de Sable en a fait une allergie !\nIl a eu de la chance que j\u2019ai ce mouchoir
       sous la main."
-    typeNote: 0
+    typeNote: 1

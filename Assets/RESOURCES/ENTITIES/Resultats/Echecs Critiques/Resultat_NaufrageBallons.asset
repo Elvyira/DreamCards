@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_NaufrageBallons
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: a3d624ef45cd7cb489f4dc5e2905a2b7, type: 2}
+  sommeil: {fileID: 11400000, guid: a3d624ef45cd7cb489f4dc5e2905a2b7, type: 2}
   objet: {fileID: 11400000, guid: a6a53dd564fbfbe448ce96628b376ac6, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Naufrage
+    sommeil: Naufrage
     objet: Ballons
     note: "L\u2019orage a \xE9clat\xE9 les ballons.\nIl \xE9tait impossible de se
       diriger avec tous ces confettis obstruant la vue..."
-    typeNote: 3
+    typeNote: 8

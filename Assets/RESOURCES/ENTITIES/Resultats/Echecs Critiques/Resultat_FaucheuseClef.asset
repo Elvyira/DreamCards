@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_FaucheuseClef
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: 949889bbd18260d42a3336e3c4860198, type: 2}
+  sommeil: {fileID: 11400000, guid: 949889bbd18260d42a3336e3c4860198, type: 2}
   objet: {fileID: 11400000, guid: f501e0cc444b96347b29b901c7780e99, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: La Faucheuse
+    sommeil: La Faucheuse
     objet: Clef
     note: "Mais comment, COMMENT ai-je pu penser qu\u2019il s\u2019agirait d\u2019une
       bonne id\xE9e d\u2019ouvrir \xE0 la Faucheuse ?!"
-    typeNote: 4
+    typeNote: 8

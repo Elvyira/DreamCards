@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MedusaEpee
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: bc990e20683152a4a856caf8dec53329, type: 2}
+  sommeil: {fileID: 11400000, guid: bc990e20683152a4a856caf8dec53329, type: 2}
   objet: {fileID: 11400000, guid: ec36af29130b8754589f7c3bb01eee44, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "M\xE9dusa"
+    sommeil: "M\xE9dusa"
     objet: "\xC9p\xE9e"
     note: "A\xEFe, l\u2019\xE9p\xE9e est difficilement maniable contre plusieurs ennemis
       en m\xEAme temps !"
-    typeNote: 4
+    typeNote: 16

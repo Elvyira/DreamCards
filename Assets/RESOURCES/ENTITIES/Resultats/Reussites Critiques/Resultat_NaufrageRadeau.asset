@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_NaufrageRadeau
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: a3d624ef45cd7cb489f4dc5e2905a2b7, type: 2}
+  sommeil: {fileID: 11400000, guid: a3d624ef45cd7cb489f4dc5e2905a2b7, type: 2}
   objet: {fileID: 11400000, guid: a33254a4d486b6449863ceec327a9828, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Naufrage
+    sommeil: Naufrage
     objet: Radeau
     note: "Aussi rapide qu\u2019un jet-ski, l\u2019\xE9quipage et moi-m\xEAme avons
       pu nous \xE9chapper de cette temp\xEAte."
-    typeNote: 0
+    typeNote: 1

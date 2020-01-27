@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_BibliothequeRobe
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
+  sommeil: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
   objet: {fileID: 11400000, guid: aef62f2a60fefc34ea72d49d0b6aece4, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Biblioth\xE8que"
+    sommeil: "Biblioth\xE8que"
     objet: Robe
     note: "Tous ces livres affol\xE9s crachaient des chemises qui attaquaient quiconque
       s\u2019approchait, et je leur ai envoy\xE9 un nouvel alli\xE9 ?!"
-    typeNote: 4
+    typeNote: 16

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Resultat_NuagesLivre
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 01f0a6d9a4b440b41821d0c169d0b44c, type: 2}
+  sommeil: {fileID: 11400000, guid: 01f0a6d9a4b440b41821d0c169d0b44c, type: 2}
   objet: {fileID: 11400000, guid: f2d4564f7fd9ddf439664179325604df, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Nuages
+    sommeil: Nuages
     objet: Livre
     note: "Ils se sont endormis \xE0 la lecture du trait\xE9 sur le parti dictatorial
       et imp\xE9rialiste des manchots empereurs.\nSur les 1001 pages que contient

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_ValleeMortArrosoir
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
+  sommeil: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
   objet: {fileID: 11400000, guid: 8a76724216c0fa246abdf7a728f55eb8, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Vall\xE9e de la Mort"
+    sommeil: "Vall\xE9e de la Mort"
     objet: Arrosoir
     note: "C\u2019est un arrosoir magique ! L\u2019eau n\u2019en finissait pas de
       s\u2019\xE9couler et a chang\xE9 ce d\xE9sert aride en v\xE9ritable oasis."
-    typeNote: 0
+    typeNote: 1

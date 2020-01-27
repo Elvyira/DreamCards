@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MonstreLitViolon
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: d7527a84e369ed844bfe2fbbca46d3aa, type: 2}
+  sommeil: {fileID: 11400000, guid: d7527a84e369ed844bfe2fbbca46d3aa, type: 2}
   objet: {fileID: 11400000, guid: 59c106f1205911c4aada30917e09ff02, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Monstre sous le lit
+    sommeil: Monstre sous le lit
     objet: Violon
     note: "Bon, pour une fois, j\u2019avoue que de ne pas \xEAtre particuli\xE8rement
       dou\xE9e au violon m\u2019a sauv\xE9e..."
-    typeNote: 0
+    typeNote: 1

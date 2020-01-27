@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MonstreLitLanterne
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: d7527a84e369ed844bfe2fbbca46d3aa, type: 2}
+  sommeil: {fileID: 11400000, guid: d7527a84e369ed844bfe2fbbca46d3aa, type: 2}
   objet: {fileID: 11400000, guid: b5c706481b369a84ca5c618f4665ec43, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Monstre sous le lit
+    sommeil: Monstre sous le lit
     objet: Lanterne
     note: "Ca c\u2019est une arme comme je la con\xE7ois : efficace contre les t\xE9n\xE8bres
       !"
-    typeNote: 1
+    typeNote: 2

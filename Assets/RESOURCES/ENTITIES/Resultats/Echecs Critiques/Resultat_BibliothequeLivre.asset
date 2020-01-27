@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_BibliothequeLivre
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
+  sommeil: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
   objet: {fileID: 11400000, guid: f2d4564f7fd9ddf439664179325604df, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Biblioth\xE8que"
+    sommeil: "Biblioth\xE8que"
     objet: Livre
     note: "Noon !\nCe livre est devenu fou comme les autres et s\u2019est mis \xE0
       m\u2019attaquer !"
-    typeNote: 3
+    typeNote: 8

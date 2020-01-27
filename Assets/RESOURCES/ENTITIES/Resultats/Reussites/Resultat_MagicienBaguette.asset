@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Resultat_MagicienBaguette
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 92a669f4e362afb429ec0d9edfbb96e5, type: 2}
+  sommeil: {fileID: 11400000, guid: 92a669f4e362afb429ec0d9edfbb96e5, type: 2}
   objet: {fileID: 11400000, guid: 7a3a9ad14610ead4c9bd602d13331bbf, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: L'Apprenti Magicien
+    sommeil: L'Apprenti Magicien
     objet: Baguette Magique
     note: "Il a reconnu sa baguette qu\u2019il avait perdu quand j\u2019ai jet\xE9
       ce sort.\nDommage que j\u2019ai d\xFB la lui rendre, j\u2019avais l\u2019impression

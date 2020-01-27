@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_ValleeMortSablier
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
+  sommeil: {fileID: 11400000, guid: da206e44cba48954d92efaa07e329b06, type: 2}
   objet: {fileID: 11400000, guid: 7f1a0e40a0878e74e8b975b144fd6045, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Vall\xE9e de la Mort"
+    sommeil: "Vall\xE9e de la Mort"
     objet: Sablier
     note: "Qu\u2019est-ce que je cherchais \xE0 rajouter du sable dans un d\xE9sert
       de sable ?\nJe dois essayer autre chose..."
-    typeNote: 3
+    typeNote: 16

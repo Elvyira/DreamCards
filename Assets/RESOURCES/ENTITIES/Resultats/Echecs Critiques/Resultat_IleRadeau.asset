@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_IleRadeau
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: d73f288e57af0964495924bef2c10b57, type: 2}
+  sommeil: {fileID: 11400000, guid: d73f288e57af0964495924bef2c10b57, type: 2}
   objet: {fileID: 11400000, guid: a33254a4d486b6449863ceec327a9828, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "\xCEle D\xE9serte"
+    sommeil: "\xCEle D\xE9serte"
     objet: Radeau
     note: "Qui aurait pu se douter que cette \xEEle \xE9tait une \xEEle flottante
       ?!\nLa voie par les mers n\u2019\xE9tait donc pas la solution..."
-    typeNote: 3
+    typeNote: 8

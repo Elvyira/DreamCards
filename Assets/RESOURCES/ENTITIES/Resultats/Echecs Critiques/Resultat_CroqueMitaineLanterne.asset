@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_CroqueMitaineLanterne
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: ef568a36b0719b442a8d70c805a1af54, type: 2}
+  sommeil: {fileID: 11400000, guid: ef568a36b0719b442a8d70c805a1af54, type: 2}
   objet: {fileID: 11400000, guid: b5c706481b369a84ca5c618f4665ec43, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Croque-Mitaine
+    sommeil: Croque-Mitaine
     objet: Lanterne
     note: "Je pensais que \xE7a faisait fuir les monstres, pas que \xE7a allait en
       cr\xE9er un avec son ombre !!"
-    typeNote: 4
+    typeNote: 8

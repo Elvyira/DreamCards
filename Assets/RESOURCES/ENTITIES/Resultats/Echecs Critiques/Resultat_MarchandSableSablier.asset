@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MarchandSableSablier
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: e0868c39cfc254b43bca9f16907f82e8, type: 2}
+  sommeil: {fileID: 11400000, guid: e0868c39cfc254b43bca9f16907f82e8, type: 2}
   objet: {fileID: 11400000, guid: 7f1a0e40a0878e74e8b975b144fd6045, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Marchand de Sable
+    sommeil: Marchand de Sable
     objet: Sablier
     note: "Il a cru que c\u2019\xE9tait moi qui avais vol\xE9 l\u2019un de ses sabliers
       magiques !\nIls sont extr\xEAmement importants pour lui, mais tr\xE8s convoit\xE9s."
-    typeNote: 3
+    typeNote: 16

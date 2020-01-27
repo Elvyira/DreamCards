@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_FeeBaguette
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
+  sommeil: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
   objet: {fileID: 11400000, guid: 7a3a9ad14610ead4c9bd602d13331bbf, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "F\xE9e"
+    sommeil: "F\xE9e"
     objet: Baguette Magique
     note: "Ma d\xE9monstration l\u2019a convaincue qu\u2019il lui fallait une baguette
       plus performante"
-    typeNote: 1
+    typeNote: 2

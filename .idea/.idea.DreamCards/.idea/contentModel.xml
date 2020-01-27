@@ -449,6 +449,11 @@
             <e p="EditModeUtility.cs" t="Include" />
             <e p="SavedDataServices.cs" t="Include" />
           </e>
+          <e p="TurnStateLabel.cs" t="Include" />
+          <e p="UnityEvents" t="Include">
+            <e p="StringEvent.cs" t="Include" />
+            <e p="TurnStateEvent.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

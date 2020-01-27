@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Resultat_CroqueMitainePieces
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: ef568a36b0719b442a8d70c805a1af54, type: 2}
+  sommeil: {fileID: 11400000, guid: ef568a36b0719b442a8d70c805a1af54, type: 2}
   objet: {fileID: 11400000, guid: 804539f36aa52574488f4035955832c3, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Croque-Mitaine
+    sommeil: Croque-Mitaine
     objet: "Sac de Pi\xE8ces"
     note: "En \xE9change de quelques pi\xE8ces, il m\u2019a laiss\xE9e tranquille."
-    typeNote: 1
+    typeNote: 2

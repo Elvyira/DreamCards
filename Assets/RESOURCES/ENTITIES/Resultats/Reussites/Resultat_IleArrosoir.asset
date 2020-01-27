@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Resultat_IleArrosoir
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: d73f288e57af0964495924bef2c10b57, type: 2}
+  sommeil: {fileID: 11400000, guid: d73f288e57af0964495924bef2c10b57, type: 2}
   objet: {fileID: 11400000, guid: 8a76724216c0fa246abdf7a728f55eb8, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "\xCEle D\xE9serte"
+    sommeil: "\xCEle D\xE9serte"
     objet: Arrosoir
     note: "Cet arrosoir a le pouvoir d\u2019amplifier la croissance des plantes.\nJ\u2019ai
       ainsi pu emprunter la voie des airs tel Jack pour quitter ce lieu."

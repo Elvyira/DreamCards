@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Resultat_ValleeBonbonsBallons
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 31ef44e2847bdd94e81d801895bf2528, type: 2}
+  sommeil: {fileID: 11400000, guid: 31ef44e2847bdd94e81d801895bf2528, type: 2}
   objet: {fileID: 11400000, guid: a6a53dd564fbfbe448ce96628b376ac6, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Vall\xE9e de Bonbons"
+    sommeil: "Vall\xE9e de Bonbons"
     objet: Ballons
     note: "Les ballons m\u2019ont \xE9chapp\xE9 des mains et ont \xE9t\xE9 touch\xE9s
       par les projectiles.\nTant mieux, les confettis qui en sont sortis ont ravis

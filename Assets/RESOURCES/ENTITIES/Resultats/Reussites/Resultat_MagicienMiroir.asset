@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MagicienMiroir
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 92a669f4e362afb429ec0d9edfbb96e5, type: 2}
+  sommeil: {fileID: 11400000, guid: 92a669f4e362afb429ec0d9edfbb96e5, type: 2}
   objet: {fileID: 11400000, guid: 02384687fff4d9c4baa8a8121778a13a, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: L'Apprenti Magicien
+    sommeil: L'Apprenti Magicien
     objet: Miroir
     note: "En voyant son reflet dans le miroir il a pu se rendre compte qu\u2019il
       lui manquait quelque chose... son uniforme par exemple..."
-    typeNote: 1
+    typeNote: 4

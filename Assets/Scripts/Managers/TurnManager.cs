@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using MightyAttributes;
+using UnityEngine;
 
 public enum TurnState : byte
 {
@@ -15,6 +17,16 @@ public class TurnManager : MonoBehaviour
     [SerializeField, Manager] private ScannerManager _scannerManager;
     [SerializeField, Manager] private VideoManager _videoManager;
 
+    public bool hasStateChangeEvent;
+
+    [SerializeField, ShowIf("hasStateChangeEvent")]
+    private TurnStateEvent _onStateChange;
+
+    public bool hasResultEvent;
+
+    [SerializeField, ShowIf("hasResultEvent")]
+    private StringEvent _onResult;
+
     #endregion /Serialized
 
     private TurnState m_turnState;
@@ -22,9 +34,13 @@ public class TurnManager : MonoBehaviour
     private ObjetModel m_currentObjet;
     private ResultatModel m_currentResultat;
 
+    private Action m_sommeilOverAction;
+    private Action m_resultatOverAction;
+
     public void Init()
     {
-        
+        m_sommeilOverAction = () => SelectState(TurnState.Objet);
+        m_resultatOverAction = () => SelectState(TurnState.NotStarted);
     }
 
     public void StartTurn() => SelectState(TurnState.Sommeil);
@@ -44,6 +60,7 @@ public class TurnManager : MonoBehaviour
     public void SelectState(TurnState state)
     {
         m_turnState = state;
+        if (hasStateChangeEvent) _onStateChange.Invoke(state);
         switch (state)
         {
             case TurnState.NotStarted:
@@ -69,11 +86,12 @@ public class TurnManager : MonoBehaviour
                 if (card is SommeilModel sommeil)
                 {
                     SelectSommeil(sommeil);
-                }
-                else
-                {
-                    // WRONG CARD TYPE SCANNED
-                    _scannerManager.Scan();
+                    _scannerManager.Stop();
+
+                    // TODO: REMOVE WHEN VIDEO WILL BE ADDED
+                    //************************************
+                    SelectState(TurnState.Objet);
+                    //************************************
                 }
 
                 break;
@@ -81,11 +99,12 @@ public class TurnManager : MonoBehaviour
                 if (card is ObjetModel objet)
                 {
                     SelectObjet(objet);
-                }
-                else
-                {
-                    // WRONG CARD TYPE SCANNED
-                    _scannerManager.Scan();
+                    _scannerManager.Stop();
+
+                    // TODO: REMOVE WHEN ANIMATION WILL BE ADDED
+                    //************************************
+                    SelectState(TurnState.Resultat);
+                    //************************************
                 }
 
                 break;
@@ -94,27 +113,40 @@ public class TurnManager : MonoBehaviour
 
     private void SelectSommeil(SommeilModel sommeil)
     {
+        Debug.Log(sommeil.nom);
+        if (hasResultEvent)
+            _onResult.Invoke(sommeil.nom);
+
         m_currentSommeil = sommeil;
-        _videoManager.Play(sommeil.startVideoClip, sommeil.idleVideoClip);
+        _videoManager.Play(sommeil.startVideoClip, sommeil.idleVideoClip, m_sommeilOverAction);
     }
 
     private void SelectObjet(ObjetModel objet)
     {
+        Debug.Log(objet.nom);
+        if (hasResultEvent)
+            _onResult.Invoke(objet.nom);
+
         m_currentObjet = objet;
-        // PLAY ACTION ANIMATION
+        //TODO: PLAY ACTION ANIMATION
     }
 
     private void SelectResultat(ResultatModel resultat)
     {
         if (resultat == null)
         {
-            // DEAL WITH ECHEC
+            //TODO: DEAL WITH ECHEC
+            if (hasResultEvent)
+                _onResult.Invoke("Echec");
             return;
         }
 
+        if (hasResultEvent)
+            _onResult.Invoke(resultat.typeResultat.ToString());
+
         m_currentResultat = resultat;
-        _videoManager.Play(resultat.videoClip);
-        // PLAY RESULTAT ANIMATION
+        _videoManager.Play(resultat.videoClip, m_resultatOverAction);
+        //TODO: PLAY RESULTAT ANIMATION
 
         resultat.UnlockNoteCarnet();
     }

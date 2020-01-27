@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_JardinBrosse
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 185fe34cf82be7342b81c9b659d75d6b, type: 2}
+  sommeil: {fileID: 11400000, guid: 185fe34cf82be7342b81c9b659d75d6b, type: 2}
   objet: {fileID: 11400000, guid: d56e4efc695805540a945503974a3c88, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Jardin Fleuri
+    sommeil: Jardin Fleuri
     objet: Brosse
     note: "En astiquant la fontaine, j\u2019ai d\xE9couvert un m\xE9canisme faisant
       appara\xEEtre un tr\xE9sor. C\u2019\xE9tait inattendu !"
-    typeNote: 2
+    typeNote: 4

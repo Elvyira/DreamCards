@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Resultat_FeeLanterne
   m_EditorClassIdentifier: 
   typeResultat: 3
-  nuit: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
+  sommeil: {fileID: 11400000, guid: 804b18140759bf24b8603466f4059316, type: 2}
   objet: {fileID: 11400000, guid: b5c706481b369a84ca5c618f4665ec43, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "F\xE9e"
+    sommeil: "F\xE9e"
     objet: Lanterne
     note: "La lumi\xE8re diffusait une chaleur si intense qu\u2019elle a fait fondre
       les notes. La f\xE9e n\u2019\xE9tait pas contente du tout !"

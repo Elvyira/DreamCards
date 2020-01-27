@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_BibliothequeViolon
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
+  sommeil: {fileID: 11400000, guid: 4be351056364486409330c5f3e765075, type: 2}
   objet: {fileID: 11400000, guid: 59c106f1205911c4aada30917e09ff02, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "Biblioth\xE8que"
+    sommeil: "Biblioth\xE8que"
     objet: Violon
     note: "La m\xE9lodie stridente, les a tellement effray\xE9s qu\u2019ils sont partis
       se r\xE9fugier dans leurs \xE9tag\xE8res.\nH\xE9, je joue si mal que \xE7a ?"
-    typeNote: 1
+    typeNote: 2

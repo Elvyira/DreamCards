@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Resultat_MirageArrosoir
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: 5e3a4110232f0f2488776881c1202c76, type: 2}
+  sommeil: {fileID: 11400000, guid: 5e3a4110232f0f2488776881c1202c76, type: 2}
   objet: {fileID: 11400000, guid: 8a76724216c0fa246abdf7a728f55eb8, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Mirage
+    sommeil: Mirage
     objet: Arrosoir
     note: "Oh non !! Ce mirage n\u2019\xE9tat qu\u2019une projection holographique.\nJe
       me suis \xE9lectrocut\xE9e en versant de l\u2019eau dans cette installation
       \xE9lectrique !"
-    typeNote: 3
+    typeNote: 8

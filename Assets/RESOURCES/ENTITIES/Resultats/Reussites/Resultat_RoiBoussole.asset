@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Resultat_RoiBoussole
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: a60fb83c8bd32e04595938c9d8cb7029, type: 2}
+  sommeil: {fileID: 11400000, guid: a60fb83c8bd32e04595938c9d8cb7029, type: 2}
   objet: {fileID: 11400000, guid: 1061ce65a2b73cd4f9de80922e8103df, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Compas boussole
+    sommeil: Roi
+    objet: Compas Boussole
     note: "Le roi a accept\xE9 ce pr\xE9sent, un peu embarass\xE9, en me promettant
       de ne pas en parler \xE0 la reine.\nIl compte le lui offrir en esp\xE9rant qu\u2019elle
       pense que l\u2019id\xE9e vienne de lui..."
-    typeNote: 2
+    typeNote: 4

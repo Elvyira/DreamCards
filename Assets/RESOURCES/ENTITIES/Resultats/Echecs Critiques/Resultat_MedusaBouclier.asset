@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MedusaBouclier
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: bc990e20683152a4a856caf8dec53329, type: 2}
+  sommeil: {fileID: 11400000, guid: bc990e20683152a4a856caf8dec53329, type: 2}
   objet: {fileID: 11400000, guid: 21f9be8bb2af88b49bc17addd1a0de25, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "M\xE9dusa"
+    sommeil: "M\xE9dusa"
     objet: Bouclier
     note: "Le bouclier est beaucoup trop lourd face \xE0 plusieurs ennemis.\nC\u2019est
       injuste, j\u2019aurais pu la battre en 1 vs 1 !"
-    typeNote: 3
+    typeNote: 8

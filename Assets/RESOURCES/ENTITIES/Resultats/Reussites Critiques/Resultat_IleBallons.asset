@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_IleBallons
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: d73f288e57af0964495924bef2c10b57, type: 2}
+  sommeil: {fileID: 11400000, guid: d73f288e57af0964495924bef2c10b57, type: 2}
   objet: {fileID: 11400000, guid: a6a53dd564fbfbe448ce96628b376ac6, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Ballons
+    sommeil: "\xCEle D\xE9serte"
+    objet: Ballons
     note: "Tel Mary Poppins je me suis envol\xE9e, au revoir petite \xEEle !\nMais
       je commen\xE7ais \xE0 m\u2019ennuyer ici."
-    typeNote: 0
+    typeNote: 1

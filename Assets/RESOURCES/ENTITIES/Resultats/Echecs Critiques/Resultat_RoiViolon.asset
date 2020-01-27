@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Resultat_RoiViolon
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: a60fb83c8bd32e04595938c9d8cb7029, type: 2}
+  sommeil: {fileID: 11400000, guid: a60fb83c8bd32e04595938c9d8cb7029, type: 2}
   objet: {fileID: 11400000, guid: 59c106f1205911c4aada30917e09ff02, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Roi
+    sommeil: Roi
     objet: Violon
     note: "Le roi n\u2019a pas eu l\u2019air d\u2019avoir appr\xE9ci\xE9 ma fa\xE7on
       de jouer.\nIl n\u2019a pas l\u2019oreille musicale... Voil\xE0 tout !\nMauvaise
       foi, non non..."
-    typeNote: 3
+    typeNote: 8

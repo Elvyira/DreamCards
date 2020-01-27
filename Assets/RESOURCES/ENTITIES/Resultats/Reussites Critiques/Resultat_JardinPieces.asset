@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_JardinPieces
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: 185fe34cf82be7342b81c9b659d75d6b, type: 2}
+  sommeil: {fileID: 11400000, guid: 185fe34cf82be7342b81c9b659d75d6b, type: 2}
   objet: {fileID: 11400000, guid: 804539f36aa52574488f4035955832c3, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: "Sac de Pi\xE8ces"
+    sommeil: Jardin Fleuri
+    objet: "Sac de Pi\xE8ces"
     note: "J\u2019ai pu exaucer un v\u0153u en jetant une pi\xE8ce dans la fontaine
       !"
-    typeNote: 0
+    typeNote: 1

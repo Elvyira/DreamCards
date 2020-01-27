@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MarchandSableBallons
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: e0868c39cfc254b43bca9f16907f82e8, type: 2}
+  sommeil: {fileID: 11400000, guid: e0868c39cfc254b43bca9f16907f82e8, type: 2}
   objet: {fileID: 11400000, guid: a6a53dd564fbfbe448ce96628b376ac6, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Marchand de Sable
+    sommeil: Marchand de Sable
     objet: Ballons
     note: "Au vu de son utilisation intensive, il est toujours \xE0 la recherche de
       ballons.\nQuelques uns en plus n\u2019\xE9taient pas de trop."
-    typeNote: 1
+    typeNote: 2

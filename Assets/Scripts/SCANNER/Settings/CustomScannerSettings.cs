@@ -11,13 +11,8 @@ public class CustomScannerSettings : MonoBehaviour
 
     private static CustomScannerSettings m_instance;
 
-#if UNITY_EDITOR
-    public static CustomScannerSettings Instance =>
-        m_instance ? m_instance : m_instance = EditModeUtility.FindFirstObject<CustomScannerSettings>();
-#else
-    public static CustomScannerSettings Instance => m_instance;
-#endif
-    
+    public static CustomScannerSettings Instance => m_instance ? m_instance : m_instance = FindObjectOfType<CustomScannerSettings>();
+
     private void Awake() => m_instance = this;
 
 #if UNITY_EDITOR

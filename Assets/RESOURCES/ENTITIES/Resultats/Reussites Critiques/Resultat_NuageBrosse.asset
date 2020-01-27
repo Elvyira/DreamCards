@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_NuageBrosse
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: 01f0a6d9a4b440b41821d0c169d0b44c, type: 2}
+  sommeil: {fileID: 11400000, guid: 01f0a6d9a4b440b41821d0c169d0b44c, type: 2}
   objet: {fileID: 11400000, guid: d56e4efc695805540a945503974a3c88, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Brosse
+    sommeil: Nuages
+    objet: Brosse
     note: "Ces bisons-nuages \xE9taient tr\xE8s content de se faire dorloter.\nLeur
       pelage \xE9tait beaucoup plus soyeux apr\xE8s un bon coup de brosse."
-    typeNote: 0
+    typeNote: 1

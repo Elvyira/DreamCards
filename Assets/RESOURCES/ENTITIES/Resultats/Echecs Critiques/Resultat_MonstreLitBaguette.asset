@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MonstreLitBaguette
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: d7527a84e369ed844bfe2fbbca46d3aa, type: 2}
+  sommeil: {fileID: 11400000, guid: d7527a84e369ed844bfe2fbbca46d3aa, type: 2}
   objet: {fileID: 11400000, guid: 7a3a9ad14610ead4c9bd602d13331bbf, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Monstre sous le lit
+    sommeil: Monstre sous le lit
     objet: Baguette Magique
     note: "A\xEFe, il a mang\xE9 ma baguette !\nIl n\u2019a pas pu r\xE9sister \xE0
       l\u2019odeur all\xE9chante du r\xE9glisse !!"
-    typeNote: 3
+    typeNote: 8

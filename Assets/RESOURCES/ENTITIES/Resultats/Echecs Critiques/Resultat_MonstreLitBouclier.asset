@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MonstreLitBouclier
   m_EditorClassIdentifier: 
   typeResultat: 2
-  nuit: {fileID: 11400000, guid: d7527a84e369ed844bfe2fbbca46d3aa, type: 2}
+  sommeil: {fileID: 11400000, guid: d7527a84e369ed844bfe2fbbca46d3aa, type: 2}
   objet: {fileID: 11400000, guid: 21f9be8bb2af88b49bc17addd1a0de25, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: Monstre sous le lit
+    sommeil: Monstre sous le lit
     objet: Bouclier
     note: "Jamais je n\u2019aurais pens\xE9 qu\u2019il puisse se fondre dans l\u2019ombre
       pour appara\xEEtre dans mon dos, brrr !!"
-    typeNote: 4
+    typeNote: 16

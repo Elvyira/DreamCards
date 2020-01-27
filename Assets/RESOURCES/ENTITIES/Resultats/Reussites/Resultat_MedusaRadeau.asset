@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_MedusaRadeau
   m_EditorClassIdentifier: 
   typeResultat: 1
-  nuit: {fileID: 11400000, guid: bc990e20683152a4a856caf8dec53329, type: 2}
+  sommeil: {fileID: 11400000, guid: bc990e20683152a4a856caf8dec53329, type: 2}
   objet: {fileID: 11400000, guid: a33254a4d486b6449863ceec327a9828, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nuit: "M\xE9dusa"
+    sommeil: "M\xE9dusa"
     objet: Radeau
     note: "Sa vitesse m\u2019a permis de fuir par les mers face \xE0 ce monstre et
       ses deux acolytes."
-    typeNote: 1
+    typeNote: 2

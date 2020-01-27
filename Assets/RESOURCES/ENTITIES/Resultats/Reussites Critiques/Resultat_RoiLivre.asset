@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Resultat_RoiLivre
   m_EditorClassIdentifier: 
   typeResultat: 0
-  nuit: {fileID: 11400000, guid: a60fb83c8bd32e04595938c9d8cb7029, type: 2}
+  sommeil: {fileID: 11400000, guid: a60fb83c8bd32e04595938c9d8cb7029, type: 2}
   objet: {fileID: 11400000, guid: f2d4564f7fd9ddf439664179325604df, type: 2}
   videoClip: {fileID: 0}
   animationClip: {fileID: 0}
   noteCarnet:
-    nom: Livre
+    sommeil: Roi
+    objet: Livre
     note: "Apparemment, il \xE9tait tr\xE8s content de d\xE9couvrir de nouvelles esp\xE8ces
       de baleines gr\xE2ce \xE0 cette encyclop\xE9die."
-    typeNote: 0
+    typeNote: 1
