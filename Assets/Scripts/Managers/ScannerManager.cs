@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ScannerManager : MonoBehaviour
 {
-    [SerializeField, Manager] private TurnManager _turnManager;
+    [SerializeField, FindReadOnly] private TurnManager _turnManager;
     [SerializeField] private RawImage _rawImage;
 
     private IScanner m_barcodeScanner;

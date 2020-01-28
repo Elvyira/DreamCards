@@ -32,7 +32,7 @@ public class EntitiesDatabase : MonoBehaviour
     public static ObjetModel[] ObjetEntities => Instance._objetEntities;
     public static ResultatModel[] ResultatEntities => Instance._resultatEntities;
 
-    private void Awake() => m_instance = this;
+    public void Init() => m_instance = this;
 
     public static CardModel GetCard(string qrLink)
     {

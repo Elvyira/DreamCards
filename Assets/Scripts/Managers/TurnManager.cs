@@ -14,8 +14,8 @@ public class TurnManager : MonoBehaviour
 {
     #region Serialized
 
-    [SerializeField, Manager] private ScannerManager _scannerManager;
-    [SerializeField, Manager] private VideoManager _videoManager;
+    [SerializeField, FindReadOnly] private ScannerManager _scannerManager;
+    [SerializeField, FindReadOnly] private VideoManager _videoManager;
 
     public bool hasStateChangeEvent;
 

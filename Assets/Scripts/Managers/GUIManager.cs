@@ -5,20 +5,28 @@ public class GUIManager : MonoBehaviour
 {
     [SerializeField, DrawSerializable] private AnimatorParameter _fadeParameter;
     [SerializeField] private FadeScreen _homeFadeScreen, _gameFadeScreen;
-    [SerializeField] private GameObject _homeMenu, _gameMenu;
+
+    private static GUIManager m_instance;
+
+#if UNITY_EDITOR
+    public static GUIManager Instance => m_instance ? m_instance : m_instance = EditModeUtility.FindFirstObject<GUIManager>();
+#else
+    public static GUIManager Instance => m_instance;
+#endif
+
+    public static AnimatorParameter FadeParameter => Instance._fadeParameter;
 
     public void Init()
     {
-        _homeMenu.SetActive(true);
-        _gameMenu.SetActive(false);
+        m_instance = this;
         
-        _homeFadeScreen.Hide();
+        _homeFadeScreen.Hide(false);
         _gameFadeScreen.Hide();
     }
     
     public void OnClickPlayButton()
     {
-        _homeFadeScreen.Fade(_fadeParameter, true);
+        _homeFadeScreen.Fade(true);
     }
     
     public void OnClickRestartButton()
@@ -27,22 +35,4 @@ public class GUIManager : MonoBehaviour
     }
 
     public void OnClickQuitButton() => GameManager.Instance.QuitGame();
-
-    public void OnHomeHidden()
-    {
-        _homeMenu.SetActive(false);
-        _homeFadeScreen.Hide();
-
-        _gameMenu.SetActive(true);
-        _gameFadeScreen.Fade(_fadeParameter, false);
-    }   
-    
-    public void OnGameHidden()
-    {
-        _gameMenu.SetActive(false);
-        _gameFadeScreen.Hide();
-        
-        _homeMenu.SetActive(true);
-        _homeFadeScreen.Fade(_fadeParameter, false);
-    }
 }
