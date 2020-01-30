@@ -26,7 +26,10 @@ public class AnimatorParameterBehaviour : MonoBehaviour
 {
     public Animator animator;
     public int parameterIndex;
-    [DrawSerializable] public AnimatorParameter[] parameters;
+
+    [DrawSerializable(SerializableOption.ContentOnly), ButtonArray(ArrayOption.ContentOnly), Fold("Parameters")]
+    public AnimatorParameter[] parameters;
+
     public bool ignoreInactive;
 
 #if UNITY_EDITOR

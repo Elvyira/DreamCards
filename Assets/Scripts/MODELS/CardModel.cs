@@ -21,7 +21,7 @@ public abstract class CardModel : ScriptableObject
     [Button]
     private void Scan()
     {
-        var parser = new ZXingParser(new ScannerSettings());
+        var parser = new ZXingParser();
         
         var result = parser.Decode(_codeImage.GetPixels32(), _codeImage.width, _codeImage.height);
         qrLink = result?.Value;

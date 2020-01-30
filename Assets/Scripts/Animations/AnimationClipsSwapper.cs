@@ -30,14 +30,30 @@ public class AnimationClipsSwapper : MonoBehaviour
     private AnimatorOverrideController m_overrideController;
     private AnimationClipOverrides m_clipOverrides;
 
+    private bool m_init;
+
     public void Init()
+    {
+        ForceInit();
+        m_init = true;
+    }
+
+    public void ForceInit()
     {
         m_overrideController = (AnimatorOverrideController) animator.runtimeAnimatorController;
         m_clipOverrides = new AnimationClipOverrides(m_overrideController.overridesCount);
         m_overrideController.GetOverrides(m_clipOverrides);
     }
 
-    public void SwapClip(string clipName, AnimationClip clip) => m_clipOverrides[clipName] = clip;
+    public void SwapClip(string clipName, AnimationClip clip)
+    {
+        if (!m_init) Init();
+        m_clipOverrides[clipName] = clip;
+    }
 
-    public void ApplyChanges() => m_overrideController.ApplyOverrides(m_clipOverrides);
+    public void ApplyChanges()
+    {
+        if (!m_init) Init();
+        m_overrideController.ApplyOverrides(m_clipOverrides);
+    }
 }

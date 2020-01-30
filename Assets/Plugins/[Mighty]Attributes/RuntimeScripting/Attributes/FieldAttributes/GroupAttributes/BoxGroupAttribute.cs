@@ -26,7 +26,7 @@
 
     public class BoxGroupAttribute : BaseGroupAttribute
     {
-        public override ColorValue BackgroundColor { get; } = ColorValue.White;
+        public override ColorValue BackgroundColor { get; } = ColorValue.Bright;
 
         public BoxGroupAttribute(string name = "", bool drawName = true, bool drawLine = true, bool nameAsCallback = false,
             string backgroundColorName = null, string contentColorName = null) : base(name, drawName, drawLine, nameAsCallback,

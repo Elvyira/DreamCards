@@ -21,7 +21,11 @@ namespace BarcodeScanner
         public int WebcamRequestedHeight { get; set; }
         public FilterMode WebcamFilterMode { get; set; }
 
-        public ScannerSettings()
+        public ScannerSettings() : this("")
+        {
+        }
+
+        public ScannerSettings(string webcamName)
         {
             ScannerBackgroundThread = true;
             ScannerDelayFrameMin = 3;
@@ -31,7 +35,7 @@ namespace BarcodeScanner
             ParserTryInverted = true;
             ParserTryHarder = false;
 
-            WebcamDefaultDeviceName = CustomScannerSettings.Instance.webcamName;
+            WebcamDefaultDeviceName = webcamName;
             WebcamRequestedWidth = 512;
             WebcamRequestedHeight = 512;
             WebcamFilterMode = FilterMode.Trilinear;

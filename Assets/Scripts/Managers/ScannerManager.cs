@@ -13,8 +13,7 @@ public class ScannerManager : MonoBehaviour
     [Debug] public bool debug;
     [SerializeField, ShowIfDebug] private RawImage _rawImage;
 
-    [Line]
-    [SerializeField, ShowIfDebug, LabelledSlider("SommeilName", "MaxSommeilIndex")]
+    [Line] [SerializeField, ShowIfDebug, LabelledSlider("SommeilName", "MaxSommeilIndex")]
     private int _sommeilIndex;
 
     [SerializeField, ShowIfDebug, LabelledSlider("ObjetName", "MaxObjetIndex")]
@@ -25,7 +24,7 @@ public class ScannerManager : MonoBehaviour
 
     public void Init()
     {
-        m_barcodeScanner = new Scanner();
+        m_barcodeScanner = new Scanner(new ScannerSettings(InstanceManager.CustomScannerSettings.webcamName));
 
         m_barcodeScanner.Camera.Play();
         m_barcodeScanner.Camera.Pause();
@@ -85,10 +84,16 @@ public class ScannerManager : MonoBehaviour
     private bool CanSelectObjet() => debug && EditorApplication.isPlaying && _turnManager.TurnState == TurnState.Objet;
 
     [Button(enabledCallback: "CanSelectSommeil")]
-    private void SelectSommeil() => _turnManager.SelectCard(InstanceManager.EntitiesManager.SommeilEntities[_sommeilIndex]);
+    private void SelectSommeil()
+    {
+        if (CanSelectSommeil()) _turnManager.SelectCard(InstanceManager.EntitiesManager.SommeilEntities[_sommeilIndex]);
+    }
 
     [Button(enabledCallback: "CanSelectObjet")]
-    private void SelectObjet() => _turnManager.SelectCard(InstanceManager.EntitiesManager.ObjetEntities[_objetIndex]);
+    private void SelectObjet()
+    {
+        if (CanSelectObjet()) _turnManager.SelectCard(InstanceManager.EntitiesManager.ObjetEntities[_objetIndex]);
+    }
 
     #endregion /Editor
 

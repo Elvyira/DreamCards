@@ -17,7 +17,6 @@ namespace MightyAttributes.Editor
         {
             if (!MightySettingsServices.AutoValuesOnBuild) return;
             ApplyAutoValues();
-            Debug.Log("Auto Values Applied");
         }
 
         [DidReloadScripts]
@@ -28,7 +27,7 @@ namespace MightyAttributes.Editor
             if (state == PlayModeStateChange.ExitingEditMode && MightySettingsServices.AutoValuesOnPlay) ApplyAutoValues();
         }
 
-        [MenuItem("Mighty Attributes/Apply Auto Values", priority = 2)]
+        [MenuItem("[Mighty]Attributes/Apply Auto Values", priority = 2)]
         public static async void ApplyAutoValuesAsync()
         {
             AutoValuesWindowUtility.Open();
@@ -45,6 +44,8 @@ namespace MightyAttributes.Editor
             }
 
             AutoValuesWindowUtility.Close();
+            
+            EditorDrawUtility.MightyDebug("Auto Values Applied");
         }
 
         public static void ApplyAutoValues()
@@ -52,6 +53,8 @@ namespace MightyAttributes.Editor
             foreach (var script in SerializedPropertyUtility.FindAllObjects<MonoBehaviour>())
                 if (script.CreateEditor(out var mightyEditor))
                     mightyEditor.ApplyAutoValues();
+            
+            EditorDrawUtility.MightyDebug("Auto Values Applied");
         }
     }
 

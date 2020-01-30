@@ -23,8 +23,9 @@ public class GameLauncher : MonoBehaviour
         
         InstanceManager.GameManager.Init();
         InstanceManager.GUIManager.Init();
-        InstanceManager.GameLoopController.Init();
         InstanceManager.TurnManager.Init();
+        
+        InstanceManager.CustomScannerSettings.Init();
         InstanceManager.ScannerManager.Init();
     }
 }

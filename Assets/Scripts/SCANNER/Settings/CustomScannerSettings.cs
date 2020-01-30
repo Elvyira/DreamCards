@@ -9,11 +9,12 @@ public class CustomScannerSettings : MonoBehaviour
 {
     [CustomDrawer("WebcamNameDrawer")] public string webcamName;
 
-    private static CustomScannerSettings m_instance;
-
-    public static CustomScannerSettings Instance => m_instance ? m_instance : m_instance = FindObjectOfType<CustomScannerSettings>();
-
-    private void Awake() => m_instance = this;
+    public void Init()
+    {
+#if !UNITY_EDITOR
+        webcamName = WebCamTexture.devices[0].name;
+#endif
+    }
 
 #if UNITY_EDITOR
     private void WebcamNameDrawer(SerializedProperty property)

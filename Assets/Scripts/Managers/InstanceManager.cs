@@ -8,10 +8,12 @@ public class InstanceManager : MonoBehaviour
     [SerializeField, FindReadOnly] private GUIManager _guiManager;
     [SerializeField, FindReadOnly] private TurnManager _turnManager;
     [SerializeField, FindReadOnly] private ScannerManager _scannerManager;
+    [SerializeField, FindReadOnly] private AudioManager _audioManager;
     [SerializeField, FindReadOnly] private EntitiesManager _entitiesManager;
 
     [Header("Others")] 
     [SerializeField, FindReadOnly] private GameLoopController _gameLoopController;
+    [SerializeField, FindReadOnly] private CustomScannerSettings _customScannerSettings;
     // @formatter:on
 
     private static InstanceManager m_instance;
@@ -28,7 +30,9 @@ public class InstanceManager : MonoBehaviour
     public static GUIManager GUIManager => Instance._guiManager;
     public static TurnManager TurnManager => Instance._turnManager;
     public static ScannerManager ScannerManager => Instance._scannerManager;
+    public static AudioManager AudioManager => Instance._audioManager;
     public static EntitiesManager EntitiesManager => Instance._entitiesManager;
 
     public static GameLoopController GameLoopController => Instance._gameLoopController;
+    public static CustomScannerSettings CustomScannerSettings => Instance._customScannerSettings;
 }

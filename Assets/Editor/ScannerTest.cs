@@ -9,7 +9,7 @@ public class ScannerTest
 	[Test]
 	public void TestSettings()
 	{
-		var settings = new ScannerSettings()
+		var settings = new ScannerSettings("Webcam Name")
 		{
 			ScannerBackgroundThread = false,
 			ScannerDelayFrameMin = 2,
@@ -18,7 +18,6 @@ public class ScannerTest
 			ParserTryInverted = false,
 			ParserTryHarder = true,
 
-			WebcamDefaultDeviceName = "Webcam Name",
 			WebcamRequestedWidth = 256,
 			WebcamRequestedHeight = 512,
 			WebcamFilterMode = FilterMode.Bilinear

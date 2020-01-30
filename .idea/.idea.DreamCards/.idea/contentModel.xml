@@ -402,6 +402,7 @@
             <e p="FindReadOnlyAttribute.cs" t="Include" />
             <e p="InChildrenReadOnlyAttribute.cs" t="Include" />
             <e p="ParameterAttribute.cs" t="Include" />
+            <e p="SFXClipSourcesAttribute.cs" t="Include" />
             <e p="ShowIfDebugAttribute.cs" t="Include" />
           </e>
           <e p="EditorWindows" t="Include">
@@ -416,6 +417,7 @@
             <e p="TurnStateLabel.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
+            <e p="AudioManager.cs" t="Include" />
             <e p="EntitiesManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="GUIManager.cs" t="Include" />
@@ -466,6 +468,7 @@
             </e>
           </e>
           <e p="StateMachineBehaviours" t="Include">
+            <e p="SFXBehaviour.cs" t="Include" />
             <e p="TurnStateBehaviour.cs" t="Include" />
           </e>
           <e p="Statics" t="Include">

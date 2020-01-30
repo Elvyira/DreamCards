@@ -239,22 +239,9 @@ namespace MightyAttributes.Editor
         {
             EditorGUILayout.HelpBox(message, type);
 
-            if (logToConsole)
-            {
-                switch (type)
-                {
-                    case MessageType.None:
-                    case MessageType.Info:
-                        Debug.Log(message, context);
-                        break;
-                    case MessageType.Warning:
-                        Debug.LogWarning(message, context);
-                        break;
-                    case MessageType.Error:
-                        Debug.LogError(message, context);
-                        break;
-                }
-            }
+            message = $"[Mighty]Attributes - {message}";
+
+            if (logToConsole) MightyDebug(message, type, context);
         }
 
         public static void DrawHelpBox(Rect rect, string message, MessageType type = MessageType.Warning, Object context = null,
@@ -262,21 +249,25 @@ namespace MightyAttributes.Editor
         {
             EditorGUI.HelpBox(rect, message, type);
 
-            if (logToConsole)
+            if (logToConsole) MightyDebug(message, type, context);
+        }
+
+        public static void MightyDebug(string message, MessageType type = MessageType.Info, Object context = null)
+        {
+            message = $"[Mighty]Attributes - {message}";
+
+            switch (type)
             {
-                switch (type)
-                {
-                    case MessageType.None:
-                    case MessageType.Info:
-                        Debug.Log(message, context);
-                        break;
-                    case MessageType.Warning:
-                        Debug.LogWarning(message, context);
-                        break;
-                    case MessageType.Error:
-                        Debug.LogError(message, context);
-                        break;
-                }
+                case MessageType.None:
+                case MessageType.Info:
+                    Debug.Log(message, context);
+                    break;
+                case MessageType.Warning:
+                    Debug.LogWarning(message, context);
+                    break;
+                case MessageType.Error:
+                    Debug.LogError(message, context);
+                    break;
             }
         }
 

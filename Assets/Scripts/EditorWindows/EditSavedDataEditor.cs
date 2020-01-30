@@ -1,4 +1,5 @@
-﻿#if UNITY_EDITOR
+﻿using System.Text.RegularExpressions;
+#if UNITY_EDITOR
 using System.Linq;
 using System.Collections.Generic;
 using UnityEditor;
@@ -128,7 +129,9 @@ public class EditSavedDataEditor : BaseSavedDataEditorWindows
 
                             if (notes.Length > 0)
                             {
-                                var noteNames = notes.Select(x => x.objet).ToArray();
+                                var noteNames = 
+                                    notes.Select(x => $@"{x.objet}            ________            {x.typeNote.PrettyName()}").ToArray();
+                                
                                 DrawUtility.DrawHorizontal(() =>
                                 {
                                     EditorGUIUtility.fieldWidth = fieldWith;
@@ -147,8 +150,11 @@ public class EditSavedDataEditor : BaseSavedDataEditorWindows
                                 EditorGUI.indentLevel++;
                             }
 
-                            if (data.notebookEntries.GetNotebookEntryIndex(sommeilIndex) != i && notes.Length == 0)
+                            var entryIndex = data.notebookEntries.GetNotebookEntryIndex(sommeilIndex);
+
+                            if (entryIndex != -1 && entryIndex != i)
                                 sommeilIndex = SavedDataServices.GetSommeilIndex(data.notebookEntries[i]);
+
                             data.notebookEntries[i] = SavedDataServices.ToNotebookEntry(sommeilIndex, typeNote);
                         });
                     }, GUI.skin.box);

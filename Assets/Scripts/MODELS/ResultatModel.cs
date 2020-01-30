@@ -22,6 +22,42 @@ public enum TypeNote : byte
     EchecCritique2 = 1 << 4
 }
 
+public static class TypeUtility
+{
+    public static string PrettyName(this TypeNote typeNote)
+    {
+        switch (typeNote)
+        {
+            case TypeNote.ReussiteCritique:
+                return "Réussite Critique";
+            case TypeNote.Reussite1:
+            case TypeNote.Reussite2:
+                return "Réussite";
+            case TypeNote.EchecCritique1:
+            case TypeNote.EchecCritique2:
+                return "Échec Critique";
+        }
+
+        return "";
+    }
+
+    public static SFXSource GetClip(this TypeResultat typeResultat)
+    {
+        switch (typeResultat)
+        {
+            case TypeResultat.ReussiteCritique:
+                return SFXSource.ReussiteCritique;
+                return SFXSource.ReussiteCritique;
+            case TypeResultat.Reussite:
+                return SFXSource.Reussite;
+            case TypeResultat.EchecCritique:
+                return SFXSource.EchecCritique;
+        }
+
+        return SFXSource.Echec;
+    }
+}
+
 [Serializable]
 public class NoteCarnet
 {

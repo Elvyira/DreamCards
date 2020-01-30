@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using UnityEditor;
 using UnityEngine;
 
 namespace MightyAttributes.Editor
@@ -20,9 +21,9 @@ namespace MightyAttributes.Editor
                 onValueChangedCallback.Invoke();
             }
             else
-                Debug.LogWarning(
+                EditorDrawUtility.DrawHelpBox(
                     $"Callback is invalid, it should be like this: \"void {((OnValueChangedAttribute) metaAttribute).CallbackName}()\"",
-                    mightyMember.Context);
+                    MessageType.Warning, mightyMember.Context);
         }
 
         public override void InitDrawer(BaseMightyMember mightyMember, BaseMightyAttribute mightyAttribute)

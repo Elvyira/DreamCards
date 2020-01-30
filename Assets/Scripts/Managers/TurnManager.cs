@@ -13,7 +13,7 @@ public class TurnManager : MonoBehaviour
     #region Serialized
 
     public int numberOfTurns;
-    
+
     public bool hasStateChangeEvent;
 
     [SerializeField, ShowIf("hasStateChangeEvent")]
@@ -37,7 +37,7 @@ public class TurnManager : MonoBehaviour
     private int m_turnCount;
 
     public TurnState TurnState => m_turnState;
-    
+
     public void Init()
     {
         m_scannerManager = InstanceManager.ScannerManager;
@@ -47,8 +47,9 @@ public class TurnManager : MonoBehaviour
 
     public void StartGame()
     {
+        m_gameLoopController.ShowScanIcon(false);
+        m_gameLoopController.ShowDiaryIcon(false);
         SelectState(TurnState.NotStarted);
-        m_turnCount = 0;
     }
 
     public void SelectState(TurnState state)
@@ -58,8 +59,10 @@ public class TurnManager : MonoBehaviour
         switch (state)
         {
             case TurnState.NotStarted:
+                m_turnCount = 0;
                 m_scannerManager.StopScan();
                 break;
+
             case TurnState.Sommeil:
                 m_turnCount++;
                 if (m_turnCount > numberOfTurns)
@@ -68,9 +71,14 @@ public class TurnManager : MonoBehaviour
                     m_gameLoopController.EndNight();
                     return;
                 }
+
+                m_gameLoopController.ShowDiaryIcon(true);
+                m_gameLoopController.ShowScanIcon(true);
                 m_scannerManager.StartScan();
                 break;
+
             case TurnState.Objet:
+                m_gameLoopController.ShowScanIcon(true);
                 m_scannerManager.StartScan();
                 break;
         }
@@ -100,6 +108,7 @@ public class TurnManager : MonoBehaviour
     }
 
     public void ConfirmCard() => m_gameLoopController.OnConfirmCard(m_turnState == TurnState.Sommeil);
+
     public void CancelCard()
     {
         m_scannerManager.StartScan();
@@ -112,7 +121,7 @@ public class TurnManager : MonoBehaviour
             _onResult.Invoke(sommeil.nom);
 
         m_currentSommeil = sommeil;
-        
+
         m_gameLoopController.OnSelectCard(sommeil);
     }
 
@@ -120,7 +129,7 @@ public class TurnManager : MonoBehaviour
     {
         if (hasResultEvent)
             _onResult.Invoke(objet.nom);
-        
+
         m_typeResultat = SelectResultat(InstanceManager.EntitiesManager.GetResultat(m_currentSommeil, objet));
 
         m_gameLoopController.OnSelectCard(objet);
@@ -133,16 +142,16 @@ public class TurnManager : MonoBehaviour
             //TODO: DEAL WITH ECHEC
             if (hasResultEvent)
                 _onResult.Invoke("Echec");
-            
+
             m_gameLoopController.OnSelectResultat(null);
             return null;
         }
 
         if (hasResultEvent)
             _onResult.Invoke(resultat.typeResultat.ToString());
-        
+
         resultat.UnlockNoteCarnet();
-        
+
         m_gameLoopController.OnSelectResultat(resultat);
 
         return resultat.typeResultat;

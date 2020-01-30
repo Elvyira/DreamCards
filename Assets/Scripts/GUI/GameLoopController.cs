@@ -1,6 +1,5 @@
 ﻿using MightyAttributes;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameLoopController : MonoBehaviour
@@ -10,21 +9,33 @@ public class GameLoopController : MonoBehaviour
     private const string USE_OBJET = "UseObjetClip";
     private const string RESULT = "ResultClip";
 
-    [SerializeField, ComponentReadOnly] private AnimatorParameterBehaviour _animatorBehaviour;
+    [SerializeField, ComponentReadOnly] private AnimatorParameterBehaviour _parameterBehaviour;
     [SerializeField, ComponentReadOnly] private AnimationClipsSwapper _clipsSwapper;
+    
     [SerializeField, AssetOnly] private Sprite _sommeilIcon, _objetIcon;
+    
     [SerializeField] private Image _cardImage, _scanCardImage;
+    [SerializeField] private Button _confirmButton, _cancelButton;
+
+    [SerializeField] private AnimatorParameterBehaviour _diaryParameterBehaviour, _scanCardParameterBehaviour;
 
     [SerializeField, Parameter] private AnimatorParameter _advanceParameter;
     [SerializeField, Parameter] private AnimatorParameter _exitParameter;
     [SerializeField, Parameter] private AnimatorParameter _sommeilParameter;
+    [SerializeField, Parameter] private AnimatorParameter _nightOverParameter;
 
-    public void Init() => _clipsSwapper.Init();
+    public void ShowScanIcon(bool show) => _scanCardParameterBehaviour.gameObject.SetActive(show);
+    public void ShowDiaryIcon(bool show) => _diaryParameterBehaviour.gameObject.SetActive(show);
 
     public void OnSelectCard(CardModel card)
     {
-        _animatorBehaviour.SetTrigger(_advanceParameter);
+        _parameterBehaviour.SetTrigger(_advanceParameter);
+        
+        _confirmButton.enabled = _cancelButton.enabled = true;
         _cardImage.sprite = card.CardSprite;
+        
+        _scanCardParameterBehaviour.SetTrigger(_exitParameter);
+        
         switch (card)
         {
             case SommeilModel sommeilModel:
@@ -38,16 +49,26 @@ public class GameLoopController : MonoBehaviour
 
     public void OnConfirmCard(bool sommeil)
     {
-        _animatorBehaviour.SetBool(_sommeilParameter, sommeil);
-        _animatorBehaviour.SetTrigger(_advanceParameter);
+        _parameterBehaviour.SetBool(_sommeilParameter, sommeil);
+        _parameterBehaviour.SetTrigger(_advanceParameter);
         _scanCardImage.sprite = sommeil ? _objetIcon : _sommeilIcon;
     }
 
-    public void OnCancelCard() => _animatorBehaviour.SetTrigger(_exitParameter);
+    public void OnCancelCard()
+    {
+        ShowScanIcon(true);
+        _parameterBehaviour.SetTrigger(_exitParameter);
+    }
 
     public void OnSelectResultat(ResultatModel resultat) => SetResultClip(resultat);
 
-    public void EndNight() => _animatorBehaviour.SetTrigger(_exitParameter);
+    public void HasNextTurn(bool hasNext) => _parameterBehaviour.SetBool(_nightOverParameter, !hasNext);
+
+    public void EndNight()
+    {
+        _diaryParameterBehaviour.SetTrigger(_exitParameter);
+        _parameterBehaviour.SetTrigger(_exitParameter);
+    }
 
     private void SetSommeilClips(SommeilModel sommeil)
     {
@@ -64,6 +85,8 @@ public class GameLoopController : MonoBehaviour
 
     private void SetResultClip(ResultatModel resultat)
     {
+        _parameterBehaviour.animator.GetBehaviour<SFXBehaviour>().source = resultat ? resultat.typeResultat.GetClip() : SFXSource.Echec;
+        
         _clipsSwapper.SwapClip(RESULT, resultat ? resultat.resultClip : null);
         _clipsSwapper.ApplyChanges();
     }

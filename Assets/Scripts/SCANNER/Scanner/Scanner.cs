@@ -67,7 +67,7 @@ namespace BarcodeScanner.Scanner
 			Status = ScannerStatus.Initialize;
 
 			// Default Properties
-			Settings = (settings == null) ? new ScannerSettings() : settings;
+			Settings = (settings == null) ? new ScannerSettings("") : settings;
 			Parser = (parser == null) ? new ZXingParser(Settings) : parser;
 			Camera = (webcam == null) ? new UnityWebcam(Settings) : webcam;
 		}

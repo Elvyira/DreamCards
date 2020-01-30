@@ -6,7 +6,7 @@ namespace MightyAttributes.Editor
 {
     public class MightySettingsWindow : EditorWindow
     {
-        [MenuItem("Mighty Attributes/Settings", priority = 3)]
+        [MenuItem("[Mighty]Attributes/Settings", priority = 3)]
         private static void Init() => GetWindow<MightySettingsWindow>().Show();
 
         private void OnGUI()
@@ -16,7 +16,7 @@ namespace MightyAttributes.Editor
                 text = " Mighty Settings"
             };
 
-            minSize = new Vector2(300, 110);
+            minSize = new Vector2(300, 120);
 
             GUILayout.Space(10);
             MightySettingsServices.Activated = EditorGUILayout.Toggle("Activated", MightySettingsServices.Activated);
