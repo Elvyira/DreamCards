@@ -16,4 +16,5 @@ MonoBehaviour:
   nom: Clef
   qrLink: http://qr.w69b.com/g/l94VruYF2
   _codeImage: {fileID: 2800000, guid: f93608f5167109740a4c6aaa727caba5, type: 3}
-  animationClip: {fileID: 0}
+  _cardSprite: {fileID: 21300000, guid: ad2ca5c790ffe74478b174beee0dff8d, type: 3}
+  objetClip: {fileID: 0}

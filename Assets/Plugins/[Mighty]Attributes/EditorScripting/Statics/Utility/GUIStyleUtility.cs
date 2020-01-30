@@ -31,7 +31,6 @@ namespace MightyAttributes.Editor
         private static readonly GUIStyle HorizontalLineStyle = new GUIStyle
         {
             normal = {background = EditorGUIUtility.whiteTexture},
-            overflow = LineOverflow,
             fixedHeight = 2,
             stretchWidth = true
         };
@@ -59,7 +58,7 @@ namespace MightyAttributes.Editor
             overflow = LightBoxOverflow
         };
 
-        private static readonly GUIStyle DarkBoxStyle = new GUIStyle("CN Box")
+        private static readonly GUIStyle DarkBoxStyle = new GUIStyle(GUI.skin.textField)
         {
             margin = VerticalSeparation,
             padding = VerticalSeparation,
@@ -84,14 +83,14 @@ namespace MightyAttributes.Editor
         private static readonly GUIStyle FoldGroupHeaderStyle = new GUIStyle(GUI.skin.button)
         {
             margin = VerticalSeparation,
-            padding = new RectOffset(1, 1, 0, 2),
+            padding = new RectOffset(1, 1, 0, 0),
             overflow = FoldGroupOverflow
         };
 
         public static readonly GUIStyle FoldGroupHeaderContent = new GUIStyle
         {
             margin = Zero,
-            padding = new RectOffset(4, 0, 0, 0)
+//            padding = new RectOffset(4, 0, 0, 0)
         };
 
         public static readonly GUIStyle FoldGroupBody = new GUIStyle(GUI.skin.textField)
@@ -133,7 +132,7 @@ namespace MightyAttributes.Editor
             fontSize = 15
         };
 
-        public static readonly GUIStyle SimpleDarkBox = new GUIStyle("CN Box")
+        public static readonly GUIStyle SimpleDarkBox = new GUIStyle(EditorStyles.textField)
         {
             margin = new RectOffset(3, 3, 3, 3)
         };

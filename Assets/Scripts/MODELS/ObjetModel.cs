@@ -8,7 +8,7 @@ public class ObjetModel : CardModel
     #region Serialized
     
     [Header("Données graphiques")] 
-    public AnimationClip animationClip;
+    public AnimationClip objetClip;
     
     #endregion /Serialized
     // @formatter:on

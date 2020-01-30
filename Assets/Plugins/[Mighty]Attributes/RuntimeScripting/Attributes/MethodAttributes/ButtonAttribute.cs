@@ -9,7 +9,7 @@ namespace MightyAttributes
 
         public string EnabledCallback { get; }
 
-        public ButtonAttribute(string text = null, string enabledCallback = null, bool executeInEditMode = true) : base(executeInEditMode)
+        public ButtonAttribute(string text = null, string enabledCallback = null, bool executeInPlayMode = true) : base(executeInPlayMode)
         {
             Text = text;
             EnabledCallback = enabledCallback;

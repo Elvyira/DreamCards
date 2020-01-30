@@ -25,7 +25,7 @@ public class EditSavedDataEditor : BaseSavedDataEditorWindows
         {
             text = " Edit Saved Data"
         };
-        minSize = new Vector2(525, 65);
+        minSize = new Vector2(400, 65);
         DrawScriptFeatures();
         GUILayout.Space(5);
         DrawAllData(() =>
@@ -40,7 +40,7 @@ public class EditSavedDataEditor : BaseSavedDataEditorWindows
         DrawData(DataType.PlayerData, ref m_unfoldPlayerData, () =>
         {
             var playerData = SavedDataServices.EditorPlayerData;
-            DrawNotebookEntries(ref playerData);
+            DrawNotebookEntries(InstanceManager.EntitiesManager, ref playerData);
             SavedDataServices.EditorPlayerData = playerData;
         });
     }
@@ -58,13 +58,13 @@ public class EditSavedDataEditor : BaseSavedDataEditorWindows
 
     #region Player Data
 
-    private void DrawNotebookEntries(ref SavedDataServices.PlayerData playerData)
+    private void DrawNotebookEntries(EntitiesManager entitiesManager, ref SavedDataServices.PlayerData playerData)
     {
         if (playerData.notebookEntries == null)
             playerData.notebookEntries = new List<ushort>();
 
         var data = playerData;
-        var sommeilEntities = EntitiesDatabase.SommeilEntities;
+        var sommeilEntities = entitiesManager.SommeilEntities;
         DrawUtility.DrawListFolder("Notes Carnet", ref m_unfoldNotebookEntries, () =>
         {
             var canAddItem = false;
@@ -72,7 +72,7 @@ public class EditSavedDataEditor : BaseSavedDataEditorWindows
             for (; sommeilIdx < sommeilEntities.Length; sommeilIdx++)
             {
                 if (data.notebookEntries.GetNotebookEntryIndex(sommeilIdx) != -1 ||
-                    EntitiesDatabase.GetNotesCarnetBySommeil(sommeilEntities[sommeilIdx]).Length == 0) continue;
+                    entitiesManager.GetNotesCarnetBySommeil(sommeilEntities[sommeilIdx]).Length == 0) continue;
                 canAddItem = true;
                 break;
             }
@@ -115,7 +115,7 @@ public class EditSavedDataEditor : BaseSavedDataEditorWindows
                                 });
                             });
 
-                            var notes = EntitiesDatabase.GetNotesCarnetBySommeil(sommeilEntities[sommeilIndex]);
+                            var notes = entitiesManager.GetNotesCarnetBySommeil(sommeilEntities[sommeilIndex]);
                             var noteIndexes = 0;
 
                             var everything = true;

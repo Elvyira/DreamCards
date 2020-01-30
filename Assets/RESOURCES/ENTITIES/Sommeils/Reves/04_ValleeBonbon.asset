@@ -16,6 +16,7 @@ MonoBehaviour:
   nom: "Vall\xE9e de Bonbons"
   qrLink: http://qr.w69b.com/g/uLYfF5yyQ
   _codeImage: {fileID: 2800000, guid: b6d3d78b7c101aa48921286fae9c3a3a, type: 3}
+  _cardSprite: {fileID: 21300000, guid: fd3592c584c0d014f96cb071bf94c2a9, type: 3}
   typeSommeil: 0
-  startVideoClip: {fileID: 0}
-  idleVideoClip: {fileID: 0}
+  startClip: {fileID: 7400000, guid: 3e8655da541653b478a1b89beb6891a8, type: 2}
+  idleClip: {fileID: 7400000, guid: 1d131a5321b35e747beb267ab119a117, type: 2}

@@ -80,7 +80,7 @@ namespace MightyAttributes.Editor
 
     public static class EditorDrawUtility
     {
-        public const int CHAR_SIZE = 10;
+        public const int CHAR_SIZE = 12;
 
         public static int TextLength(string text) => text.Length * CHAR_SIZE;
 

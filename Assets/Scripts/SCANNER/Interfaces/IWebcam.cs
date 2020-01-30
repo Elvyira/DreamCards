@@ -14,6 +14,7 @@ namespace BarcodeScanner
 		bool IsReady();
 		bool IsPlaying();
 		void Play();
+		void Pause();
 		void Stop();
 		void Destroy();
 

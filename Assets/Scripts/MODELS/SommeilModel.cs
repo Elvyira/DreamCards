@@ -19,8 +19,8 @@ public class SommeilModel : CardModel
     public TypeSommeil typeSommeil;
 
     [Header("Données graphiques")] 
-    public VideoClip startVideoClip;
-    public VideoClip idleVideoClip;
+    public AnimationClip startClip;
+    public AnimationClip idleClip;
 
     #endregion /Serialized
     // @formatter:on

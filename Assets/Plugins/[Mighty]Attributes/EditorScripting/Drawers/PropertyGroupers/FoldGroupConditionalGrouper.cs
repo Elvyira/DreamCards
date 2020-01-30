@@ -20,7 +20,7 @@ namespace MightyAttributes.Editor
         public bool BeginFoldout(bool foldout, string label, int indentLevel)
         {
             GUILayout.BeginVertical(GUIStyleUtility.FoldGroupHeader(indentLevel));
-            EditorGUI.indentLevel = 0;
+            EditorGUI.indentLevel++;
 
             GUILayout.BeginVertical(GUIStyleUtility.FoldGroupHeaderContent);
             foldout = EditorDrawUtility.DrawFoldout(foldout, label, GUIStyleUtility.BoldFoldout);

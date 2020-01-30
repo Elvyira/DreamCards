@@ -8,17 +8,12 @@ public class FadeScreen : MonoBehaviour
     [SerializeField] private GameObject _menu;
     public bool hasNextFadeScreen;
     [SerializeField, ShowIf("hasNextFadeScreen")] private FadeScreen _nextFadeScreen;
-
-    public void Init()
-    {
-        
-    }
     
     public void Fade(bool fadeIn)
     {
         _menu.SetActive(true);
         gameObject.SetActive(true);
-        _animatorParameterBehaviour.SetBool(GUIManager.FadeParameter, fadeIn);
+        _animatorParameterBehaviour.SetBool(InstanceManager.GUIManager.FadeParameter, fadeIn);
     }
 
     public void Hide(bool hideMenu = true)

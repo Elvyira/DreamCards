@@ -245,8 +245,6 @@ namespace MightyAttributes
                     return BuildTargetGroup.Switch;
                 case BuildTarget.Lumin:
                     return BuildTargetGroup.Lumin;
-                case BuildTarget.BJM:
-                    return BuildTargetGroup.BJM;
                 default:
                     return BuildTargetGroup.Unknown;
             }
@@ -278,8 +276,6 @@ namespace MightyAttributes
                     return new[] {BuildTarget.Switch};
                 case BuildTargetGroup.Lumin:
                     return new[] {BuildTarget.Lumin};
-                case BuildTargetGroup.BJM:
-                    return new[] {BuildTarget.BJM};
                 default:
                     return new[] {BuildTarget.NoTarget};
             }

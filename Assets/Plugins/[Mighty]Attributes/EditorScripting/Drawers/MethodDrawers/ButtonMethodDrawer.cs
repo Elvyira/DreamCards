@@ -21,7 +21,7 @@ namespace MightyAttributes.Editor
 
                 var enabled = GUI.enabled;
                 if (!m_buttonCache.Contains(mightyMember)) InitDrawer(mightyMember, baseAttribute);
-                GUI.enabled = m_buttonCache[mightyMember].Value && buttonAttribute.ExecuteInPlayMode || !EditorApplication.isPlaying;
+                GUI.enabled = m_buttonCache[mightyMember].Value && (buttonAttribute.ExecuteInPlayMode || !EditorApplication.isPlaying);
 
                 if (GUILayout.Button(buttonText)) methodInfo.Invoke(mightyMember.Target, null);
 

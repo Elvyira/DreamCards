@@ -188,7 +188,7 @@ public static class DrawUtility
         BeginGUILayoutIndent();
         GUILayout.BeginVertical(Skin);
         if (indent != Indent.Nothing) EditorGUI.indentLevel++;
-        unfold = EditorGUILayout.Foldout(unfold, label, true, labelStyle ?? EditorStyles.largeLabel) || otherUnfoldCondition;
+        unfold = EditorGUILayout.Foldout(unfold, label, true, labelStyle ?? EditorStyles.boldLabel) || otherUnfoldCondition;
         if (indent == Indent.Label) EditorGUI.indentLevel--;
         GUI.color = color;
         GUI.contentColor = contentColor;

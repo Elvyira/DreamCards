@@ -57,6 +57,11 @@ namespace BarcodeScanner.Webcam
             Webcam.Play();
         }
 
+        public void Pause()
+        {
+            Webcam.Pause();
+        }
+
         public void Stop()
         {
             Webcam.Stop();

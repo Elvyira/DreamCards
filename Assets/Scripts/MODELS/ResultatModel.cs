@@ -4,7 +4,6 @@ using System.Linq;
 using System;
 using MightyAttributes;
 using UnityEngine;
-using UnityEngine.Video;
 
 public enum TypeResultat : byte
 {
@@ -49,8 +48,7 @@ public class ResultatModel : ScriptableObject
     [AssetOnly] public ObjetModel objet;
 
     [Header("Données graphiques")]
-    [AssetOnly] public VideoClip videoClip;
-    [AssetOnly] public AnimationClip animationClip;
+    [AssetOnly] public AnimationClip resultClip;
 
     [Header("Note Carnet")] 
     [DrawSerializable(SerializableOption.ContentOnly), Line(DecoratorPosition.Wrap)] public NoteCarnet noteCarnet;

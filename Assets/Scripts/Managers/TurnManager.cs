@@ -1,22 +1,19 @@
-﻿using System;
-using MightyAttributes;
+﻿using MightyAttributes;
 using UnityEngine;
 
 public enum TurnState : byte
 {
     NotStarted,
     Sommeil,
-    Objet,
-    Resultat
+    Objet
 }
 
 public class TurnManager : MonoBehaviour
 {
     #region Serialized
 
-    [SerializeField, FindReadOnly] private ScannerManager _scannerManager;
-    [SerializeField, FindReadOnly] private VideoManager _videoManager;
-
+    public int numberOfTurns;
+    
     public bool hasStateChangeEvent;
 
     [SerializeField, ShowIf("hasStateChangeEvent")]
@@ -29,32 +26,29 @@ public class TurnManager : MonoBehaviour
 
     #endregion /Serialized
 
+    private ScannerManager m_scannerManager;
+    private GUIManager m_guiManager;
+    private GameLoopController m_gameLoopController;
+
     private TurnState m_turnState;
     private SommeilModel m_currentSommeil;
-    private ObjetModel m_currentObjet;
-    private ResultatModel m_currentResultat;
+    private TypeResultat? m_typeResultat;
 
-    private Action m_sommeilOverAction;
-    private Action m_resultatOverAction;
+    private int m_turnCount;
 
+    public TurnState TurnState => m_turnState;
+    
     public void Init()
     {
-        m_sommeilOverAction = () => SelectState(TurnState.Objet);
-        m_resultatOverAction = () => SelectState(TurnState.NotStarted);
+        m_scannerManager = InstanceManager.ScannerManager;
+        m_guiManager = InstanceManager.GUIManager;
+        m_gameLoopController = InstanceManager.GameLoopController;
     }
 
-    public void StartTurn() => SelectState(TurnState.Sommeil);
-
-    public void StopTurn() => SelectState(TurnState.NotStarted);
-
-    public void GoToNextState()
+    public void StartGame()
     {
-        var newState = m_turnState + 1;
-
-        if (newState <= TurnState.Resultat)
-            SelectState(newState);
-        else
-            StopTurn();
+        SelectState(TurnState.NotStarted);
+        m_turnCount = 0;
     }
 
     public void SelectState(TurnState state)
@@ -64,16 +58,20 @@ public class TurnManager : MonoBehaviour
         switch (state)
         {
             case TurnState.NotStarted:
-                _scannerManager.Stop();
+                m_scannerManager.StopScan();
                 break;
             case TurnState.Sommeil:
-                _scannerManager.Scan();
+                m_turnCount++;
+                if (m_turnCount > numberOfTurns)
+                {
+                    SelectState(TurnState.NotStarted);
+                    m_gameLoopController.EndNight();
+                    return;
+                }
+                m_scannerManager.StartScan();
                 break;
             case TurnState.Objet:
-                _scannerManager.Scan();
-                break;
-            case TurnState.Resultat:
-                SelectResultat(EntitiesDatabase.GetResultat(m_currentSommeil, m_currentObjet));
+                m_scannerManager.StartScan();
                 break;
         }
     }
@@ -85,69 +83,68 @@ public class TurnManager : MonoBehaviour
             case TurnState.Sommeil:
                 if (card is SommeilModel sommeil)
                 {
+                    m_scannerManager.StopScan();
                     SelectSommeil(sommeil);
-                    _scannerManager.Stop();
-
-                    // TODO: REMOVE WHEN VIDEO WILL BE ADDED
-                    //************************************
-                    SelectState(TurnState.Objet);
-                    //************************************
                 }
 
                 break;
             case TurnState.Objet:
                 if (card is ObjetModel objet)
                 {
+                    m_scannerManager.StopScan();
                     SelectObjet(objet);
-                    _scannerManager.Stop();
-
-                    // TODO: REMOVE WHEN ANIMATION WILL BE ADDED
-                    //************************************
-                    SelectState(TurnState.Resultat);
-                    //************************************
                 }
 
                 break;
         }
     }
 
+    public void ConfirmCard() => m_gameLoopController.OnConfirmCard(m_turnState == TurnState.Sommeil);
+    public void CancelCard()
+    {
+        m_scannerManager.StartScan();
+        m_gameLoopController.OnCancelCard();
+    }
+
     private void SelectSommeil(SommeilModel sommeil)
     {
-        Debug.Log(sommeil.nom);
         if (hasResultEvent)
             _onResult.Invoke(sommeil.nom);
 
         m_currentSommeil = sommeil;
-        _videoManager.Play(sommeil.startVideoClip, sommeil.idleVideoClip, m_sommeilOverAction);
+        
+        m_gameLoopController.OnSelectCard(sommeil);
     }
 
     private void SelectObjet(ObjetModel objet)
     {
-        Debug.Log(objet.nom);
         if (hasResultEvent)
             _onResult.Invoke(objet.nom);
+        
+        m_typeResultat = SelectResultat(InstanceManager.EntitiesManager.GetResultat(m_currentSommeil, objet));
 
-        m_currentObjet = objet;
-        //TODO: PLAY ACTION ANIMATION
+        m_gameLoopController.OnSelectCard(objet);
     }
 
-    private void SelectResultat(ResultatModel resultat)
+    private TypeResultat? SelectResultat(ResultatModel resultat)
     {
         if (resultat == null)
         {
             //TODO: DEAL WITH ECHEC
             if (hasResultEvent)
                 _onResult.Invoke("Echec");
-            return;
+            
+            m_gameLoopController.OnSelectResultat(null);
+            return null;
         }
 
         if (hasResultEvent)
             _onResult.Invoke(resultat.typeResultat.ToString());
-
-        m_currentResultat = resultat;
-        _videoManager.Play(resultat.videoClip, m_resultatOverAction);
-        //TODO: PLAY RESULTAT ANIMATION
-
+        
         resultat.UnlockNoteCarnet();
+        
+        m_gameLoopController.OnSelectResultat(resultat);
+
+        return resultat.typeResultat;
     }
 }

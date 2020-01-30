@@ -16,6 +16,7 @@ MonoBehaviour:
   nom: "Vall\xE9e de la Mort"
   qrLink: http://qr.w69b.com/g/rWhZyekCI
   _codeImage: {fileID: 2800000, guid: 9376ee097396e434e9a22d19ecbd858d, type: 3}
+  _cardSprite: {fileID: 21300000, guid: a41bf27b8966d8e47bf9f5db63594f21, type: 3}
   typeSommeil: 0
-  startVideoClip: {fileID: 0}
-  idleVideoClip: {fileID: 0}
+  startClip: {fileID: 7400000, guid: 0f72cc89a1f575340a2d8feea7398bf7, type: 2}
+  idleClip: {fileID: 7400000, guid: f6420f752aa125f45849c8e98b235818, type: 2}

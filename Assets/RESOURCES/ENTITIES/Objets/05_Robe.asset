@@ -16,4 +16,5 @@ MonoBehaviour:
   nom: Robe
   qrLink: http://qr.w69b.com/g/lqQgHtofS
   _codeImage: {fileID: 2800000, guid: b0d1eed7e63179f40b2d5f377f212d1c, type: 3}
-  animationClip: {fileID: 0}
+  _cardSprite: {fileID: 21300000, guid: e326488dede423a47a6f7e06ea0e8650, type: 3}
+  objetClip: {fileID: 0}

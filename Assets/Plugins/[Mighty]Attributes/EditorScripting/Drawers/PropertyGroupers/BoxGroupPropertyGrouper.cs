@@ -10,7 +10,7 @@ namespace MightyAttributes.Editor
         public override void BeginDrawGroup(string label, bool drawName, int indentLevel)
         {
             GUILayout.BeginVertical(GUIStyleUtility.LightBox(indentLevel));
-            EditorGUI.indentLevel = 0;
+            EditorGUI.indentLevel++;
             if (drawName && !string.IsNullOrEmpty(label)) EditorGUILayout.LabelField(label, GUIStyleUtility.BoxGroupLabel);
         }
 
@@ -27,7 +27,7 @@ namespace MightyAttributes.Editor
         public override void BeginDrawGroup(string label, bool drawName, int indentLevel)
         {
             GUILayout.BeginVertical(GUIStyleUtility.DarkBox(indentLevel));
-            EditorGUI.indentLevel = 0;
+            EditorGUI.indentLevel++;
             if (drawName && !string.IsNullOrEmpty(label)) EditorGUILayout.LabelField(label, GUIStyleUtility.BoxGroupLabel);
         }
 

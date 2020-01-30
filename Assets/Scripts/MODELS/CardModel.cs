@@ -12,6 +12,10 @@ public abstract class CardModel : ScriptableObject
     public string nom;
     [ReadOnly] public string qrLink;
     [SerializeField, AssetOnly] private Texture2D _codeImage;
+
+    [SerializeField, AssetOnly] private Sprite _cardSprite;
+
+    public Sprite CardSprite => _cardSprite;
     
 #if UNITY_EDITOR
     [Button]

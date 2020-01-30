@@ -18,6 +18,5 @@ namespace BarcodeScanner
 		void Stop();
 		void Update();
 		void Destroy();
-
 	}
 }

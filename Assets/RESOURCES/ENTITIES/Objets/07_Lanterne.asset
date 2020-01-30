@@ -16,4 +16,5 @@ MonoBehaviour:
   nom: Lanterne
   qrLink: http://qr.w69b.com/g/qB88IkU24
   _codeImage: {fileID: 2800000, guid: 2b72418375fd5e142814a15a56c33d52, type: 3}
-  animationClip: {fileID: 0}
+  _cardSprite: {fileID: 21300000, guid: 9779d00e8390bcc48a1e316461d14bd5, type: 3}
+  objetClip: {fileID: 0}

@@ -16,4 +16,5 @@ MonoBehaviour:
   nom: Sablier
   qrLink: http://qr.w69b.com/g/mXr2CtLZ6
   _codeImage: {fileID: 2800000, guid: 6b13496acd980354b9f3c84080093147, type: 3}
-  animationClip: {fileID: 0}
+  _cardSprite: {fileID: 21300000, guid: f44342cd012562a4185b29598fed0ab8, type: 3}
+  objetClip: {fileID: 0}
