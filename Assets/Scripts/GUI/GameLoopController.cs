@@ -11,7 +11,8 @@ public class GameLoopController : MonoBehaviour
 
     [SerializeField, ComponentReadOnly] private AnimatorParameterBehaviour _parameterBehaviour;
     [SerializeField, ComponentReadOnly] private AnimationClipsSwapper _clipsSwapper;
-    
+
+    [SerializeField, AssetOnly] private Sprite _defaultCardSprite;
     [SerializeField, AssetOnly] private Sprite _sommeilIcon, _objetIcon;
     
     [SerializeField] private Image _cardImage, _scanCardImage;
@@ -32,7 +33,7 @@ public class GameLoopController : MonoBehaviour
         _parameterBehaviour.SetTrigger(_advanceParameter);
         
         _confirmButton.enabled = _cancelButton.enabled = true;
-        _cardImage.sprite = card.CardSprite;
+        _cardImage.sprite = card.CardSprite ? card.CardSprite : _defaultCardSprite;
         
         _scanCardParameterBehaviour.SetTrigger(_exitParameter);
         

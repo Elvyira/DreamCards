@@ -17,4 +17,5 @@ MonoBehaviour:
   qrLink: http://qr.w69b.com/g/mQi5JEspi
   _codeImage: {fileID: 2800000, guid: 3ebfb78f954012947b5b77c1fcde9a4e, type: 3}
   _cardSprite: {fileID: 21300000, guid: 7e43a9f2efb371c4bade202b4944fe19, type: 3}
+  audioClip: {fileID: 8300000, guid: bcf574be4d6989545bf25c529a68a68c, type: 3}
   objetClip: {fileID: 0}

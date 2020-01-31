@@ -412,6 +412,9 @@
           </e>
           <e p="GameLauncher.cs" t="Include" />
           <e p="GUI" t="Include">
+            <e p="Cadran.cs" t="Include" />
+            <e p="DiaryController.cs" t="Include" />
+            <e p="DiaryPageController.cs" t="Include" />
             <e p="FadeScreen.cs" t="Include" />
             <e p="GameLoopController.cs" t="Include" />
             <e p="TurnStateLabel.cs" t="Include" />
@@ -468,7 +471,10 @@
             </e>
           </e>
           <e p="StateMachineBehaviours" t="Include">
+            <e p="BackToHomeBehaviour.cs" t="Include" />
+            <e p="CardSFXBehaviour.cs" t="Include" />
             <e p="SFXBehaviour.cs" t="Include" />
+            <e p="ShowResultBehaviour.cs" t="Include" />
             <e p="TurnStateBehaviour.cs" t="Include" />
           </e>
           <e p="Statics" t="Include">

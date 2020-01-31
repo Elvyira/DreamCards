@@ -14,6 +14,7 @@ public abstract class CardModel : ScriptableObject
     [SerializeField, AssetOnly] private Texture2D _codeImage;
 
     [SerializeField, AssetOnly] private Sprite _cardSprite;
+    [AssetOnly] public AudioClip audioClip;
 
     public Sprite CardSprite => _cardSprite;
     

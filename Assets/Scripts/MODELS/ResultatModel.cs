@@ -24,21 +24,36 @@ public enum TypeNote : byte
 
 public static class TypeUtility
 {
+    public static string PrettyName(this TypeResultat typeResultat)
+    {
+        switch (typeResultat)
+        {
+            case TypeResultat.ReussiteCritique:
+                return "Reussite Critique";
+            case TypeResultat.Reussite:
+                return "Reussite";
+            case TypeResultat.EchecCritique:
+                return "Echec Critique";
+        }
+
+        return "Echec";
+    }
+    
     public static string PrettyName(this TypeNote typeNote)
     {
         switch (typeNote)
         {
             case TypeNote.ReussiteCritique:
-                return "Réussite Critique";
+                return "Reussite Critique";
             case TypeNote.Reussite1:
             case TypeNote.Reussite2:
-                return "Réussite";
+                return "Reussite";
             case TypeNote.EchecCritique1:
             case TypeNote.EchecCritique2:
-                return "Échec Critique";
+                return "Echec Critique";
         }
 
-        return "";
+        return "Echec";
     }
 
     public static SFXSource GetClip(this TypeResultat typeResultat)
@@ -46,7 +61,6 @@ public static class TypeUtility
         switch (typeResultat)
         {
             case TypeResultat.ReussiteCritique:
-                return SFXSource.ReussiteCritique;
                 return SFXSource.ReussiteCritique;
             case TypeResultat.Reussite:
                 return SFXSource.Reussite;

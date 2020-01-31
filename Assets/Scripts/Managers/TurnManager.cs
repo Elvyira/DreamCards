@@ -1,4 +1,5 @@
-﻿using MightyAttributes;
+﻿using System;
+using MightyAttributes;
 using UnityEngine;
 
 public enum TurnState : byte
@@ -64,6 +65,7 @@ public class TurnManager : MonoBehaviour
                 break;
 
             case TurnState.Sommeil:
+                m_guiManager.OnChangeTurn(m_turnCount);
                 m_turnCount++;
                 if (m_turnCount > numberOfTurns)
                 {
@@ -115,6 +117,25 @@ public class TurnManager : MonoBehaviour
         m_gameLoopController.OnCancelCard();
     }
 
+    public void PlayCardSFX()
+    {
+        switch (m_turnState)
+        {
+            case TurnState.Sommeil:
+                InstanceManager.AudioManager.PlayClip(m_currentSommeil.audioClip, true);
+                break;
+            case TurnState.Objet:
+                InstanceManager.AudioManager.PlayClip(m_currentSommeil.audioClip, false);
+                break;
+        }
+    }
+
+    public void ShowResult(bool show)
+    {
+        if (show) m_guiManager.OnShowResult(m_typeResultat == null ? "Echec" : ((TypeResultat) m_typeResultat).PrettyName());
+        else m_guiManager.HideResult();
+    }
+
     private void SelectSommeil(SommeilModel sommeil)
     {
         if (hasResultEvent)
@@ -139,16 +160,13 @@ public class TurnManager : MonoBehaviour
     {
         if (resultat == null)
         {
-            //TODO: DEAL WITH ECHEC
-            if (hasResultEvent)
-                _onResult.Invoke("Echec");
+            if (hasResultEvent) _onResult.Invoke("Echec");
 
             m_gameLoopController.OnSelectResultat(null);
             return null;
         }
-
-        if (hasResultEvent)
-            _onResult.Invoke(resultat.typeResultat.ToString());
+        
+        if (hasResultEvent) _onResult.Invoke(resultat.typeResultat.PrettyName());
 
         resultat.UnlockNoteCarnet();
 
